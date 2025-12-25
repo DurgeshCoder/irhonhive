@@ -4,40 +4,50 @@ import { Button } from "@/components/ui/button"
 import { Check, Star } from "lucide-react"
 import { FadeIn } from "@/components/ui/fade-in"
 
+// Updated plans with Rupee Pricing for Lucknow Gym
 const plans = [
     {
         name: "Basic",
-        price: "49",
+        price: "2000",
         period: "/mo",
-        description: "Essential access to gym facilities.",
-        features: ["Access to Gym Floor", "Locker Room Access", "1 Free Assessment", "Open 6am - 10pm"],
-        cta: "Start Basic",
+        description: "Essential monthly access to gym facilities.",
+        features: ["Access to Gym Floor", "General Trainer Support", "Locker Access", "Open 6am - 10pm"],
+        cta: "Join Basic",
         highlight: false,
     },
     {
-        name: "Pro",
-        price: "89",
-        period: "/mo",
-        description: "Unlimited access and group classes.",
-        features: ["All Basic Features", "Unlimited Group Classes", "Sauna & Steam Room", "Nutritional Guide", "Guest Pass (1/mo)"],
-        cta: "Join Pro",
+        name: "Quarterly",
+        price: "4000",
+        period: "/3mo",
+        description: "Commit to 3 months and save big.",
+        features: ["All Basic Features", "Diet Consultation", "Steam Room Access (1/wk)", "Price Lock Guarantee"],
+        cta: "Join Quarterly",
         highlight: true,
     },
     {
-        name: "Elite",
-        price: "129",
-        period: "/mo",
-        description: "The complete Ironhive experience.",
-        features: ["All Pro Features", "Priority Equipment Access", "Towel Service", "Personal Locker", "Quarterly Body Scan", "Guest Pass (Unlimited)"],
-        cta: "Go Elite",
+        name: "Half Yearly",
+        price: "6000",
+        period: "/6mo",
+        description: "Serious commitment for serious results.",
+        features: ["All Quarterly Features", "Unlimited Steam Room", "Full Body Assessment", "2 Guest Passes"],
+        cta: "Join Half Yearly",
+        highlight: false,
+    },
+    {
+        name: "Yearly",
+        price: "8000",
+        period: "/yr",
+        description: "Best value for long-term transformation.",
+        features: ["All Half-Yearly Features", "Priority Support", "Personal Locker", "Free T-Shirt", "Freeze Membership Option"],
+        cta: "Join Yearly",
         highlight: false,
     },
     {
         name: "Personal Training",
-        price: "499",
+        price: "10000",
         period: "/mo",
-        description: "Dedicated coaching for maximum results.",
-        features: ["Gym Membership Included", "8 PT Sessions/mo", "Custom Meal Plans", "Daily Check-ins", "Performance Tracking"],
+        description: "Dedicated 1-on-1 coaching for maximum results.",
+        features: ["Gym Membership Included", "12 PT Sessions/mo", "Custom Meal Plans", "Daily Check-ins", "Performance Tracking"],
         cta: "Get Coached",
         highlight: false,
     },
@@ -62,11 +72,12 @@ export function Membership() {
                     </div>
                 </FadeIn>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                {/* Adjusted grid for 5 items */}
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center gap-6">
                     {plans.map((plan, index) => (
                         <FadeIn key={index} delay={index * 0.1}>
                             <div
-                                className={`relative flex flex-col p-6 rounded-2xl border ${plan.highlight ? 'border-primary bg-white/5 scale-105 z-10 shadow-2xl shadow-primary/20' : 'border-white/10 bg-white/5'} transition-all duration-300 hover:border-primary/50`}
+                                className={`relative flex flex-col p-6 rounded-2xl border ${plan.highlight ? 'border-primary bg-white/5 scale-105 z-10 shadow-2xl shadow-primary/20' : 'border-white/10 bg-white/5'} transition-all duration-300 hover:border-primary/50 h-full`}
                             >
                                 {plan.highlight && (
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1 shadow-lg">
@@ -77,9 +88,9 @@ export function Membership() {
                                 <div className="mb-6">
                                     <h4 className="text-xl font-bold text-white uppercase mb-2">{plan.name}</h4>
                                     <div className="flex items-baseline">
-                                        <span className="text-4xl font-black text-white">$</span>
+                                        <span className="text-4xl font-black text-white">₹</span>
                                         <span className="text-5xl font-black text-white">{plan.price}</span>
-                                        <span className="text-muted-foreground ml-1">{plan.period}</span>
+                                        <span className="text-muted-foreground ml-1 text-sm">{plan.period}</span>
                                     </div>
                                     <p className="text-sm text-gray-400 mt-2">{plan.description}</p>
                                 </div>
