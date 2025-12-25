@@ -130,7 +130,7 @@ export function Hero() {
                     className="mb-8"
                 >
                     <h1 className="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-none flex flex-wrap justify-center gap-x-4 drop-shadow-2xl">
-                        {"FORGED".split("").map((char, i) => (
+                        {"TRANSFORM".split("").map((char, i) => (
                             <motion.span key={i} variants={letterVariants} transition={{ type: "spring", damping: 12, stiffness: 200 }}>
                                 {char}
                             </motion.span>
@@ -138,7 +138,7 @@ export function Hero() {
                         <span className="w-full md:w-auto" /> {/* Break on mobile */}
                         <span className="relative">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-400">
-                                NOT BORN
+                                YOUR BODY
                             </span>
                             <motion.span
                                 initial={{ width: "0%" }}
@@ -156,7 +156,7 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto mb-12 font-medium leading-relaxed drop-shadow-lg"
                 >
-                    Unleash your potential in a facility designed for <span className="text-primary font-bold">power</span>, <span className="text-primary font-bold">endurance</span>, and <span className="text-primary font-bold">transformation</span>.
+                    Reach your fitness goals with the <span className="text-primary font-bold">best equipment</span> and <span className="text-primary font-bold">trainers</span> in Lucknow.
                 </motion.p>
 
                 <motion.div
