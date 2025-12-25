@@ -3,20 +3,19 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
+import Image from "next/image"
 
 const AnimatedCounter = ({ value }: { value: string }) => {
     const ref = useRef<HTMLSpanElement>(null)
     const motionValue = useMotionValue(0)
     const springValue = useSpring(motionValue, { damping: 100, stiffness: 100 })
-    const isInView = useRef(false)
 
     // Extract number and suffix
     const number = parseInt(value.replace(/[^0-9]/g, '')) || 0
     const suffix = value.replace(/[0-9]/g, '')
 
     useEffect(() => {
-        // Simple animation on mount since we are in hero
         motionValue.set(number)
     }, [motionValue, number])
 
@@ -33,7 +32,7 @@ const AnimatedCounter = ({ value }: { value: string }) => {
 
 const HexagonGrid = () => {
     return (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.15]">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.15] z-10">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-repeat opacity-50 mix-blend-overlay"></div>
             {/* Moving light effect */}
             <motion.div
@@ -55,7 +54,6 @@ const HexagonGrid = () => {
 export function Hero() {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-    const y2 = useTransform(scrollY, [0, 500], [0, -150]);
     const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
     const headlineVariants = {
@@ -68,11 +66,6 @@ export function Hero() {
         }
     }
 
-    const startVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 }
-    }
-
     const letterVariants = {
         hidden: { opacity: 0, y: 50, rotateX: -90 },
         visible: { opacity: 1, y: 0, rotateX: 0 }
@@ -80,30 +73,42 @@ export function Hero() {
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
+            {/* Real Image Background */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/images/hero-bg.jpg"
+                    alt="Ironhive Gym Floor"
+                    fill
+                    className="object-cover opacity-60"
+                    priority
+                />
+            </div>
+
             <HexagonGrid />
 
             {/* Parallax Background Elements */}
-            <motion.div style={{ y: y1, opacity }} className="absolute inset-0 bg-honeycomb opacity-20 pointer-events-none" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/80 pointer-events-none" />
+            <motion.div style={{ y: y1, opacity }} className="absolute inset-0 bg-honeycomb opacity-20 pointer-events-none z-10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/80 pointer-events-none z-10" />
 
+            {/* Orbs */}
             <motion.div
                 animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
                 transition={{ duration: 8, repeat: Infinity }}
-                className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[150px] rounded-full pointer-events-none"
+                className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[150px] rounded-full pointer-events-none z-10"
             />
             <motion.div
                 animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.3, 0.2] }}
                 transition={{ duration: 8, repeat: Infinity, delay: 4 }}
-                className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/20 blur-[150px] rounded-full pointer-events-none"
+                className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/20 blur-[150px] rounded-full pointer-events-none z-10"
             />
 
             {/* Content */}
-            <div className="container mx-auto px-4 relative z-10 text-center perspective-1000">
+            <div className="container mx-auto px-4 relative z-20 text-center perspective-1000">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-block mb-6 px-6 py-2 rounded-full border border-primary/20 bg-primary/5 backdrop-blur-sm"
+                    className="inline-block mb-6 px-6 py-2 rounded-full border border-primary/20 bg-black/40 backdrop-blur-sm"
                 >
                     <motion.div
                         animate={{ opacity: [0.5, 1, 0.5] }}
@@ -121,15 +126,15 @@ export function Hero() {
                     animate="visible"
                     className="mb-8"
                 >
-                    <h1 className="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-none flex flex-wrap justify-center gap-x-4">
+                    <h1 className="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-none flex flex-wrap justify-center gap-x-4 drop-shadow-2xl">
                         {"FORGED".split("").map((char, i) => (
                             <motion.span key={i} variants={letterVariants} transition={{ type: "spring", damping: 12, stiffness: 200 }}>
                                 {char}
                             </motion.span>
                         ))}
-                        <span className="w-full md:w-auto" /> {/* Break on mobile if needed, or visual separator */}
+                        <span className="w-full md:w-auto" /> {/* Break on mobile */}
                         <span className="relative">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-500">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-400">
                                 NOT BORN
                             </span>
                             <motion.span
@@ -146,9 +151,9 @@ export function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-lg md:text-2xl text-gray-400 max-w-2xl mx-auto mb-12 font-light leading-relaxed"
+                    className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto mb-12 font-medium leading-relaxed drop-shadow-lg"
                 >
-                    Unleash your potential in a facility designed for <span className="text-white font-bold">power</span>, <span className="text-white font-bold">endurance</span>, and <span className="text-white font-bold">transformation</span>.
+                    Unleash your potential in a facility designed for <span className="text-primary font-bold">power</span>, <span className="text-primary font-bold">endurance</span>, and <span className="text-primary font-bold">transformation</span>.
                 </motion.p>
 
                 <motion.div
@@ -157,24 +162,24 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
-                    <Button size="lg" className="group bg-primary text-black hover:bg-primary hover:scale-105 transition-all duration-300 font-black uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg] shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)]">
+                    <Button size="lg" className="group bg-primary text-black hover:bg-white hover:scale-105 transition-all duration-300 font-black uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg] shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]">
                         <span className="skew-x-[10deg] flex items-center gap-2 group-hover:translate-x-1 transition-transform">
                             Join The Hive <ArrowRight className="w-5 h-5" />
                         </span>
                     </Button>
-                    <Button size="lg" variant="outline" className="group text-white border-white/20 hover:bg-white/10 hover:border-white/50 backdrop-blur-sm font-bold uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg]">
+                    <Button size="lg" variant="outline" className="group text-white border-white/40 bg-black/20 hover:bg-black/50 hover:border-white backdrop-blur-sm font-bold uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg]">
                         <span className="skew-x-[10deg] flex items-center gap-2">
                             Book Free Trial
                         </span>
                     </Button>
                 </motion.div>
 
-                {/* Stats Strip */}
+                {/* Stats Strip - Updated Style */}
                 <motion.div
                     initial={{ opacity: 0, scaleY: 0 }}
                     animate={{ opacity: 1, scaleY: 1 }}
                     transition={{ duration: 0.8, delay: 1 }}
-                    className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto border-t border-white/10 pt-12 bg-black/50 backdrop-blur-sm rounded-t-3xl"
+                    className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto border-t border-white/20 pt-12 bg-black/60 backdrop-blur-md rounded-t-3xl shadow-2xl pb-8 px-4"
                 >
                     {[
                         { label: "Members Trained", value: "2500+" },
@@ -197,10 +202,10 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="absolute bottom-10 left-0 right-0 flex justify-center"
+                className="absolute bottom-10 left-0 right-0 flex justify-center z-20"
             >
                 <div className="flex flex-col items-center gap-2">
-                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Scroll</span>
+                    <span className="text-[10px] uppercase tracking-widest text-white/50">Scroll</span>
                     <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
                         <motion.div
                             animate={{ y: [0, 12, 0] }}

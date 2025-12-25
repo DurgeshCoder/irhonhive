@@ -28,7 +28,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold uppercase">Location</h4>
-                                    <p className="text-gray-400">123 Iron Street, District 9<br />Metropolis, NY 10012</p>
+                                    <p className="text-gray-400">1/21, Vastu Khand, Gomti Nagar, <br /> Lucknow, Uttar Pradesh 226010</p>
                                 </div>
                             </div>
 
@@ -38,7 +38,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold uppercase">Phone</h4>
-                                    <p className="text-gray-400">+1 (555) 123-4567<br />+1 (555) 987-6543</p>
+                                    <p className="text-gray-400">+91-7007552746<br />+91-8127171111</p>
                                 </div>
                             </div>
 
@@ -48,7 +48,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold uppercase">Email</h4>
-                                    <p className="text-gray-400">strength@ironhive.com<br />join@ironhive.com</p>
+                                    <p className="text-gray-400">ironhivefitnessgym@gmail.com</p>
                                 </div>
                             </div>
                         </div>
