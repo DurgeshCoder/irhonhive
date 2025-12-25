@@ -5,22 +5,35 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 
 const schedule = {
     monday: [
-        { time: "06:00 AM", class: "Wake Up Warrior", trainer: "Alex" },
-        { time: "09:00 AM", class: "HIIT Burn", trainer: "Sarah" },
-        { time: "05:00 PM", class: "Power Hour", trainer: "Marcus" },
-        { time: "07:00 PM", class: "Yoga Flow", trainer: "Elena" },
+        { time: "06:00 AM", class: "Wake Up Warrior", trainer: "Sunil" },
+        { time: "09:00 AM", class: "HIIT Burn", trainer: "Punit" },
+        { time: "05:00 PM", class: "Power Hour", trainer: "Sunil" },
+        { time: "07:00 PM", class: "Yoga Flow", trainer: "Punit" },
     ],
     tuesday: [
-        { time: "06:00 AM", class: "Strength Foundations", trainer: "Marcus" },
-        { time: "08:00 AM", class: "Cardio Blast", trainer: "Sarah" },
-        { time: "06:00 PM", class: "Cross-Training", trainer: "Alex" },
+        { time: "06:00 AM", class: "Strength Foundations", trainer: "Sunil" },
+        { time: "08:00 AM", class: "Cardio Blast", trainer: "Punit" },
+        { time: "06:00 PM", class: "Cross-Training", trainer: "Sunil" },
     ],
     wednesday: [
-        { time: "06:00 AM", class: "Wake Up Warrior", trainer: "Alex" },
-        { time: "12:00 PM", class: "Lunch Crunch", trainer: "Sarah" },
-        { time: "07:00 PM", class: "Mobility Masterclass", trainer: "Elena" },
+        { time: "06:00 AM", class: "Wake Up Warrior", trainer: "Sunil" },
+        { time: "12:00 PM", class: "Lunch Crunch", trainer: "Punit" },
+        { time: "07:00 PM", class: "Mobility Masterclass", trainer: "Punit" },
     ],
-    // ... other days (simplified for brevity)
+    thursday: [
+        { time: "06:00 AM", class: "Power Lift", trainer: "Sunil" },
+        { time: "09:00 AM", class: "Abs & Core", trainer: "Punit" },
+        { time: "06:00 PM", class: "Beast Mode", trainer: "Sunil" },
+    ],
+    friday: [
+        { time: "06:00 AM", class: "Endurance Run", trainer: "Punit" },
+        { time: "05:00 PM", class: "Full Body", trainer: "Sunil" },
+        { time: "07:00 PM", class: "Recovery", trainer: "Punit" },
+    ],
+    saturday: [
+        { time: "07:00 AM", class: "Weekend Warrior", trainer: "Sunil" },
+        { time: "09:00 AM", class: "Community Lift", trainer: "Punit" },
+    ]
 }
 
 export function Schedule() {
