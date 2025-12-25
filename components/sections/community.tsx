@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button"
 
 export function Community() {
+    const whatsappUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I%20want%20to%20join%20the%20community!"
+
     return (
         <section id="community" className="py-24 relative overflow-hidden flex items-center bg-black">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 fixed-attachment" />
@@ -29,7 +31,10 @@ export function Community() {
                             <p className="text-sm text-gray-400">Accountability partners and community mentorship.</p>
                         </div>
                     </div>
-                    <Button className="bg-white text-black hover:bg-gray-200 font-bold uppercase tracking-wider h-12 px-8">
+                    <Button
+                        className="bg-white text-black hover:bg-gray-200 font-bold uppercase tracking-wider h-12 px-8"
+                        onClick={() => window.open(whatsappUrl, '_blank')}
+                    >
                         Join The Community
                     </Button>
                 </div>

@@ -54,6 +54,11 @@ const plans = [
 ]
 
 export function Membership() {
+    const getWhatsappLink = (planName: string) => {
+        const text = encodeURIComponent(`Hi Ironhive, I'm interested in the ${planName} membership plan.`);
+        return `https://wa.me/917007552746?text=${text}`;
+    }
+
     return (
         <section id="membership" className="py-24 bg-card relative overflow-hidden">
             {/* Texture overlay */}
@@ -108,6 +113,7 @@ export function Membership() {
 
                                 <Button
                                     className={`w-full font-bold uppercase tracking-wider ${plan.highlight ? 'bg-primary text-black hover:bg-primary/90' : 'bg-white/10 text-white hover:bg-white/20'}`}
+                                    onClick={() => window.open(getWhatsappLink(plan.name), '_blank')}
                                 >
                                     {plan.cta}
                                 </Button>

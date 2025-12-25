@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Instagram, Facebook, Youtube } from "lucide-react"
 
 export function Contact() {
+    const whatsappUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I'm%20interested%20in%20joining!"
+
     return (
         <section id="contact" className="py-24 bg-card relative">
             <div className="container mx-auto px-4">
@@ -63,12 +65,16 @@ export function Contact() {
                                 ))}
                             </div>
                         </div>
+
                     </div>
 
-                    <div className="bg-black p-8 rounded-2xl border border-white/10 relative overflow-hidden">
+                    <div className="bg-black p-8 rounded-2xl border border-white/10 relative overflow-hidden h-fit">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 blur-[80px] rounded-full pointer-events-none" />
 
-                        <form className="space-y-6 relative z-10">
+                        <form className="space-y-6 relative z-10" onSubmit={(e) => {
+                            e.preventDefault();
+                            window.open(whatsappUrl, '_blank');
+                        }}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label htmlFor="name" className="text-xs font-bold uppercase text-gray-500 tracking-wider">Name</label>
@@ -100,12 +106,26 @@ export function Contact() {
                                 <Textarea id="message" placeholder="Tell us about your fitness journey..." className="bg-white/5 border-white/10 focus:border-primary text-white min-h-[120px]" />
                             </div>
 
-                            <Button size="lg" className="w-full bg-primary text-black hover:bg-primary/90 font-bold uppercase tracking-wider h-12">
-                                Send Message
+                            <Button type="submit" size="lg" className="w-full bg-primary text-black hover:bg-primary/90 font-bold uppercase tracking-wider h-12">
+                                Send Via WhatsApp
                             </Button>
                         </form>
                     </div>
                 </div>
+
+                {/* Map Embed - Moved outside grid for full width relative to container */}
+                <div className="w-full h-[450px] rounded-2xl overflow-hidden border border-white/10 mt-16 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4180.0234236504575!2d81.0258346!3d26.870332500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be34da239a60d%3A0xb9265f196c7211c4!2sIronhive%20fitness!5e1!3m2!1sen!2sin!4v1766661640311!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen={true}
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
+                </div>
+
             </div>
         </section>
     )

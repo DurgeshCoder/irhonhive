@@ -9,6 +9,7 @@ import { Transformations } from "@/components/sections/transformations"
 import { Community } from "@/components/sections/community"
 import { Schedule } from "@/components/sections/schedule"
 import { Testimonials } from "@/components/sections/testimonials"
+import { YoutubeFeed } from "@/components/sections/youtube-feed"
 import { BlogPreview } from "@/components/sections/blog-preview"
 import { Contact } from "@/components/sections/contact"
 
@@ -26,6 +27,7 @@ export default function Home() {
       <Community />
       <Schedule />
       <Testimonials />
+      <YoutubeFeed />
       <BlogPreview />
       <Contact />
     </div>

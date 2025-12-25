@@ -19,7 +19,7 @@ const testimonials = [
     {
         name: "David K.",
         role: "Transformation Client",
-        content: "Lost 40lbs in 6 months. The coaches didn't just give me a plan; they gave me a new lifestyle.",
+        content: "Lost 18kg in 6 months. The coaches didn't just give me a plan; they gave me a new lifestyle.",
         rating: 5,
     },
 ]

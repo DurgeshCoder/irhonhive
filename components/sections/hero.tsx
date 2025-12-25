@@ -71,6 +71,9 @@ export function Hero() {
         visible: { opacity: 1, y: 0, rotateX: 0 }
     }
 
+    const whatsappUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I%20want%20to%20Join!"
+    const trialUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I'd%20like%20to%20book%20a%20free%20trial."
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
             {/* Real Image Background */}
@@ -162,12 +165,21 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.8 }}
                     className="flex flex-col sm:flex-row items-center justify-center gap-6"
                 >
-                    <Button size="lg" className="group bg-primary text-black hover:bg-white hover:scale-105 transition-all duration-300 font-black uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg] shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]">
+                    <Button
+                        size="lg"
+                        className="group bg-primary text-black hover:bg-white hover:scale-105 transition-all duration-300 font-black uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg] shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]"
+                        onClick={() => window.open(whatsappUrl, '_blank')}
+                    >
                         <span className="skew-x-[10deg] flex items-center gap-2 group-hover:translate-x-1 transition-transform">
                             Join The Hive <ArrowRight className="w-5 h-5" />
                         </span>
                     </Button>
-                    <Button size="lg" variant="outline" className="group text-white border-white/40 bg-black/20 hover:bg-black/50 hover:border-white backdrop-blur-sm font-bold uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg]">
+                    <Button
+                        size="lg"
+                        variant="outline"
+                        className="group text-white border-white/40 bg-black/20 hover:bg-black/50 hover:border-white backdrop-blur-sm font-bold uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg]"
+                        onClick={() => window.open(trialUrl, '_blank')}
+                    >
                         <span className="skew-x-[10deg] flex items-center gap-2">
                             Book Free Trial
                         </span>

@@ -34,7 +34,7 @@ export function Transformations() {
                             <div className="p-4">
                                 <div className="flex justify-between items-center mb-2">
                                     <h4 className="font-bold text-white">Member Name {i + 1}</h4>
-                                    <span className="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded">-25 lbs</span>
+                                    <span className="text-primary text-xs font-bold bg-primary/10 px-2 py-1 rounded">-12 kg</span>
                                 </div>
                                 <p className="text-xs text-gray-400 italic">"The hive mentality kept me going when I wanted to quit. Best decision of my life."</p>
                             </div>

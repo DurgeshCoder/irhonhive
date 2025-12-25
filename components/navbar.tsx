@@ -28,6 +28,8 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
 
+    const whatsappUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I'm%20interested%20in%20joining!"
+
     return (
         <header
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-black/80 backdrop-blur-md border-b border-white/10" : "bg-transparent"
@@ -55,7 +57,10 @@ export function Navbar() {
                             {item.name}
                         </Link>
                     ))}
-                    <Button className="bg-primary text-black hover:bg-primary/90 font-bold uppercase tracking-wider skew-x-[-10deg]">
+                    <Button
+                        className="bg-primary text-black hover:bg-primary/90 font-bold uppercase tracking-wider skew-x-[-10deg]"
+                        onClick={() => window.open(whatsappUrl, '_blank')}
+                    >
                         <span className="skew-x-[10deg]">Join Now</span>
                     </Button>
                 </nav>
@@ -78,7 +83,10 @@ export function Navbar() {
                                     {item.name}
                                 </Link>
                             ))}
-                            <Button className="w-full bg-primary text-black hover:bg-primary/90 font-bold uppercase tracking-wider">
+                            <Button
+                                className="w-full bg-primary text-black hover:bg-primary/90 font-bold uppercase tracking-wider"
+                                onClick={() => window.open(whatsappUrl, '_blank')}
+                            >
                                 Join Now
                             </Button>
                         </div>
