@@ -9,6 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
 const navItems = [
     { name: "About", href: "#about" },
+    { name: "Gallery", href: "#gallery" },
     { name: "Programs", href: "#programs" },
     { name: "Membership", href: "#membership" },
     { name: "Trainers", href: "#trainers" },
