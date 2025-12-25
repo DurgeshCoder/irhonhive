@@ -2,25 +2,31 @@
 
 import { Instagram, Twitter, Linkedin } from "lucide-react"
 import { FadeIn } from "@/components/ui/fade-in"
+import Image from "next/image"
+
+import punitImg from "@/assets/images/trainer/punit_awasti.jpeg"
+import sunilImg from "@/assets/images/trainer/sunil_kumar.jpeg"
 
 const trainers = [
     {
         name: "Sunil Kumar",
         role: "Head Coach / Bodybuilding",
-        image: "/api/placeholder/400/500", // Will need real images
+        image: sunilImg,
+        initials: "SK",
         social: [Instagram, Twitter],
     },
     {
         name: "Punit Awasthi",
         role: "Senior Trainer / Fitness",
-        image: "/api/placeholder/400/500",
+        image: punitImg,
+        initials: "PA",
         social: [Instagram, Linkedin],
     },
 ]
 
 export function Trainers() {
     return (
-        <section id="trainers" className="py-24 bg-black relative">
+        <section id="trainers" className="py-16 md:py-24 bg-black relative">
             <div className="container mx-auto px-4">
                 <FadeIn direction="down">
                     <div className="text-center max-w-3xl mx-auto mb-16">
@@ -36,11 +42,21 @@ export function Trainers() {
                         <FadeIn key={index} delay={index * 0.1}>
                             <div className="group relative overflow-hidden rounded-xl bg-neutral-900 border border-white/5">
                                 <div className="aspect-[3/4] bg-neutral-800 relative overflow-hidden">
-                                    {/* Image Placeholder */}
+                                    {/* Image or Placeholder */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 z-10" />
-                                    <div className="w-full h-full bg-neutral-800 flex items-center justify-center text-white/10 text-6xl font-black uppercase group-hover:scale-105 transition-transform duration-500">
-                                        {trainer.name.split(' ')[0]}
-                                    </div>
+
+                                    {trainer.image ? (
+                                        <Image
+                                            src={trainer.image}
+                                            alt={trainer.name}
+                                            fill
+                                            className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full bg-neutral-800 flex items-center justify-center text-white/10 text-6xl font-black uppercase group-hover:scale-105 transition-transform duration-500">
+                                            {trainer.initials}
+                                        </div>
+                                    )}
 
                                     {/* Social Overlay */}
                                     <div className="absolute top-4 right-4 z-20 translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300 flex flex-col gap-2">

@@ -46,7 +46,7 @@ const programs = [
 
 export function Programs() {
     return (
-        <section id="programs" className="py-24 bg-black relative">
+        <section id="programs" className="py-16 md:py-24 bg-black relative">
             {/* Background accent */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 

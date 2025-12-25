@@ -98,7 +98,7 @@ export function Gallery() {
     )
 
     return (
-        <section id="gallery" className="py-24 bg-black relative">
+        <section id="gallery" className="py-16 md:py-24 bg-black relative">
             <div className="container mx-auto px-4">
                 <FadeIn>
                     <div className="text-center max-w-3xl mx-auto mb-12">

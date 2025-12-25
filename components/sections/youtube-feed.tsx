@@ -29,7 +29,7 @@ export function YoutubeFeed() {
     const channelUrl = "https://www.youtube.com/@TheMuscleGameSK/shorts"
 
     return (
-        <section id="videos" className="py-24 bg-black relative border-t border-white/5">
+        <section id="videos" className="py-16 md:py-24 bg-black relative border-t border-white/5">
             <div className="container mx-auto px-4">
                 <FadeIn>
                     <div className="text-center max-w-3xl mx-auto mb-16">

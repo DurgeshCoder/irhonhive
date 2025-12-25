@@ -129,7 +129,7 @@ export function Hero() {
                     animate="visible"
                     className="mb-8"
                 >
-                    <h1 className="text-5xl md:text-7xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-none flex flex-wrap justify-center gap-x-4 drop-shadow-2xl">
+                    <h1 className="text-4xl sm:text-6xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-none flex flex-wrap justify-center gap-x-4 drop-shadow-2xl">
                         {"TRANSFORM".split("").map((char, i) => (
                             <motion.span key={i} variants={letterVariants} transition={{ type: "spring", damping: 12, stiffness: 200 }}>
                                 {char}

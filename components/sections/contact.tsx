@@ -114,7 +114,7 @@ export function Contact() {
                 </div>
 
                 {/* Map Embed - Moved outside grid for full width relative to container */}
-                <div className="w-full h-[450px] rounded-2xl overflow-hidden border border-white/10 mt-16 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
+                <div className="w-full h-[300px] md:h-[450px] rounded-2xl overflow-hidden border border-white/10 mt-16 grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
                     <iframe
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4180.0234236504575!2d81.0258346!3d26.870332500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399be34da239a60d%3A0xb9265f196c7211c4!2sIronhive%20fitness!5e1!3m2!1sen!2sin!4v1766661640311!5m2!1sen!2sin"
                         width="100%"

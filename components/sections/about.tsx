@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/ui/fade-in"
 import aboutGym from "@/assets/images/ironhive_fitness.png"
 export function About() {
     return (
-        <section id="about" className="py-24 bg-card overflow-hidden">
+        <section id="about" className="py-16 md:py-24 bg-card overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col lg:flex-row items-center gap-16">
                     <div className="w-full lg:w-1/2 relative group">

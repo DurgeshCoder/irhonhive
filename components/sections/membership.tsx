@@ -60,7 +60,7 @@ export function Membership() {
     }
 
     return (
-        <section id="membership" className="py-24 bg-card relative overflow-hidden">
+        <section id="membership" className="py-16 md:py-24 bg-card relative overflow-hidden">
             {/* Texture overlay */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 pointer-events-none" />
 
