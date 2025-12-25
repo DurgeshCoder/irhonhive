@@ -71,9 +71,12 @@ export function SiteFooter() {
                     <p className="text-gray-500 text-xs">
                         © {new Date().getFullYear()} Ironhive Fitness. All rights reserved.
                     </p>
-                    <div className="flex gap-6">
+                    <div className="flex gap-6 items-center">
                         <Link href="#" className="text-gray-500 hover:text-white text-xs uppercase tracking-wider">Privacy Policy</Link>
                         <Link href="#" className="text-gray-500 hover:text-white text-xs uppercase tracking-wider">Terms of Service</Link>
+                        <span className="text-gray-600 text-[10px] uppercase tracking-wider border-l border-white/10 pl-6">
+                            Made by <a href="https://substringtechnologies.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-white transition-colors">Substring Technologies</a>
+                        </span>
                     </div>
                 </div>
             </div>
