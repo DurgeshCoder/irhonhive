@@ -52,17 +52,16 @@ export function SiteFooter() {
                     <div>
                         <h4 className="text-white font-bold uppercase mb-6 tracking-wider">Operating Hours</h4>
                         <ul className="space-y-3 text-sm text-gray-400">
-                            <li className="flex justify-between">
-                                <span>Mon - Fri</span>
-                                <span className="text-white">5:00 AM - 11:00 PM</span>
+                            <li className="flex justify-between items-center bg-white/5 p-3 rounded">
+                                <span className="uppercase tracking-wide text-xs">Morning</span>
+                                <span className="text-white font-bold">6:00 AM - 11:00 AM</span>
                             </li>
-                            <li className="flex justify-between">
-                                <span>Saturday</span>
-                                <span className="text-white">6:00 AM - 9:00 PM</span>
+                            <li className="flex justify-between items-center bg-white/5 p-3 rounded">
+                                <span className="uppercase tracking-wide text-xs">Evening</span>
+                                <span className="text-white font-bold">4:00 PM - 11:00 PM</span>
                             </li>
-                            <li className="flex justify-between">
-                                <span>Sunday</span>
-                                <span className="text-white">7:00 AM - 8:00 PM</span>
+                            <li className="mt-4 text-xs text-gray-500 text-center">
+                                Open 7 Days A Week
                             </li>
                         </ul>
                     </div>

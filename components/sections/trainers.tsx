@@ -5,28 +5,16 @@ import { FadeIn } from "@/components/ui/fade-in"
 
 const trainers = [
     {
-        name: "Alex Sterling",
-        role: "Head Coach / Strength",
+        name: "Sunil Kumar",
+        role: "Head Coach / Bodybuilding",
         image: "/api/placeholder/400/500", // Will need real images
         social: [Instagram, Twitter],
     },
     {
-        name: "Sarah 'Viper' Vance",
-        role: "HIIT & Conditioning",
+        name: "Punit Awasthi",
+        role: "Senior Trainer / Fitness",
         image: "/api/placeholder/400/500",
         social: [Instagram, Linkedin],
-    },
-    {
-        name: "Marcus Thorne",
-        role: "Bodybuilding Specialist",
-        image: "/api/placeholder/400/500",
-        social: [Instagram],
-    },
-    {
-        name: "Elena Ross",
-        role: "Yoga & Mobility",
-        image: "/api/placeholder/400/500",
-        social: [Instagram, Twitter],
     },
 ]
 
@@ -43,7 +31,7 @@ export function Trainers() {
                     </div>
                 </FadeIn>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {trainers.map((trainer, index) => (
                         <FadeIn key={index} delay={index * 0.1}>
                             <div className="group relative overflow-hidden rounded-xl bg-neutral-900 border border-white/5">
