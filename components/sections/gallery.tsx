@@ -16,7 +16,6 @@ import img4 from "@/assets/images/ironhive_fitness4.jpeg"
 import img5 from "@/assets/images/ironhive_fitness5.jpeg"
 import img6 from "@/assets/images/ironhive_fitness6.jpeg"
 import img7 from "@/assets/images/ironhive_fitness7.jpeg"
-// import baseImg from "@/assets/images/ironhive_fitness.png" // Used in About, maybe skip or use as backup
 
 // Types for gallery items
 type Category = "All" | "Equipment" | "Facility" | "Accessories"
@@ -98,15 +97,15 @@ export function Gallery() {
     )
 
     return (
-        <section id="gallery" className="py-16 md:py-24 bg-black relative">
+        <section id="gallery" className="py-16 md:py-24 bg-background relative">
             <div className="container mx-auto px-4">
                 <FadeIn>
                     <div className="text-center max-w-3xl mx-auto mb-12">
                         <h2 className="text-primary font-mono text-sm tracking-wider uppercase mb-2">The Arsenal</h2>
-                        <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4">
                             Inside The <span className="text-primary">Hive</span>
                         </h3>
-                        <p className="text-gray-400">
+                        <p className="text-muted-foreground">
                             Explore our world-class facility, premium equipment, and the tools you need to forge your ultimate physique.
                         </p>
                     </div>
@@ -119,9 +118,9 @@ export function Gallery() {
                             key={cat}
                             variant="outline"
                             onClick={() => setFilter(cat)}
-                            className={`rounded-full border-white/10 hover:border-primary hover:text-primary transition-all uppercase tracking-wider text-xs font-bold ${filter === cat
-                                ? "bg-primary text-black border-primary hover:bg-primary/90 hover:text-black"
-                                : "bg-transparent text-gray-400"
+                            className={`rounded-full border-border hover:border-primary hover:text-primary transition-all uppercase tracking-wider text-xs font-bold ${filter === cat
+                                ? "bg-primary text-primary-foreground border-primary hover:bg-primary/90 hover:text-primary-foreground"
+                                : "bg-transparent text-muted-foreground"
                                 }`}
                         >
                             {cat}
@@ -143,7 +142,7 @@ export function Gallery() {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
                                 key={item.id}
-                                className={`relative group overflow-hidden rounded-xl bg-neutral-900 border border-white/5 aspect-[4/3] cursor-pointer`}
+                                className={`relative group overflow-hidden rounded-xl bg-muted border border-border aspect-[4/3] cursor-pointer shadow-sm`}
                                 onClick={() => setSelectedImage(item)}
                             >
                                 {/* Real Image */}
@@ -156,11 +155,11 @@ export function Gallery() {
                                 />
 
                                 {/* Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                                <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                                     <span className="text-primary text-xs font-bold uppercase tracking-widest mb-1">{item.category}</span>
-                                    <h4 className="text-white font-bold text-lg uppercase">{item.title}</h4>
-                                    <div className="absolute top-4 right-4 bg-black/50 p-2 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity delay-100">
-                                        <Maximize2 className="w-4 h-4 text-white" />
+                                    <h4 className="text-foreground font-bold text-lg uppercase drop-shadow-sm">{item.title}</h4>
+                                    <div className="absolute top-4 right-4 bg-background/50 p-2 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity delay-100 border border-border">
+                                        <Maximize2 className="w-4 h-4 text-foreground" />
                                     </div>
                                 </div>
                             </motion.div>
@@ -173,12 +172,12 @@ export function Gallery() {
             <Dialog open={!!selectedImage} onOpenChange={(open) => !open && setSelectedImage(null)}>
                 <DialogContent className="max-w-5xl w-full bg-transparent border-none p-0 shadow-none">
                     {selectedImage && (
-                        <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-black border border-white/10">
+                        <div className="relative aspect-video w-full rounded-xl overflow-hidden bg-background border border-border">
                             <div className="absolute pt-4 pr-4 top-0 right-0 z-50">
                                 <Button
                                     size="icon"
                                     variant="ghost"
-                                    className="rounded-full bg-black/50 text-white hover:bg-primary hover:text-black backdrop-blur-md"
+                                    className="rounded-full bg-background/50 text-foreground hover:bg-primary hover:text-primary-foreground backdrop-blur-md border border-border"
                                     onClick={() => setSelectedImage(null)}
                                 >
                                     <X className="w-5 h-5" />
@@ -190,9 +189,9 @@ export function Gallery() {
                                 fill
                                 className="object-contain"
                             />
-                            <div className="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-md p-4">
-                                <h4 className="text-white font-bold text-xl uppercase">{selectedImage.title}</h4>
-                                <p className="text-gray-400 text-sm hidden md:block">{selectedImage.alt}</p>
+                            <div className="absolute bottom-0 left-0 right-0 bg-background/80 backdrop-blur-md p-4 border-t border-border">
+                                <h4 className="text-foreground font-bold text-xl uppercase">{selectedImage.title}</h4>
+                                <p className="text-muted-foreground text-sm hidden md:block">{selectedImage.alt}</p>
                             </div>
                         </div>
                     )}

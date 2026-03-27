@@ -44,7 +44,7 @@ export function Membership() {
     }
 
     return (
-        <section id="membership" className="py-16 md:py-24 bg-card relative overflow-hidden">
+        <section id="membership" className="py-16 md:py-24 bg-background relative overflow-hidden">
             {/* Texture overlay */}
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 pointer-events-none" />
 
@@ -52,7 +52,7 @@ export function Membership() {
                 <FadeIn direction="right">
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-primary font-mono text-sm tracking-wider uppercase mb-2">Membership Plans</h2>
-                        <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4">
                             Invest In Your <span className="text-primary">Strength</span>
                         </h3>
                         <p className="text-muted-foreground mb-6">
@@ -64,9 +64,9 @@ export function Membership() {
                                 <div className="w-2 h-2 rounded-full bg-primary box-shadow-neon" />
                                 <span className="text-primary font-black uppercase tracking-widest text-lg">Free Trial Session Available</span>
                             </div>
-                            <div className="hidden sm:block h-8 w-px bg-white/10" />
-                            <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3">
-                                <p className="text-white/80 font-bold text-sm uppercase tracking-wider">
+                            <div className="hidden sm:block h-8 w-px bg-border" />
+                            <div className="bg-card border border-border rounded-xl px-6 py-3">
+                                <p className="text-foreground font-bold text-sm uppercase tracking-wider">
                                     Timing: 5.30am - 11.30am | 4.00pm - 10.00pm
                                 </p>
                             </div>
@@ -78,29 +78,29 @@ export function Membership() {
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-center gap-6">
                     {plans.map((plan, index) => (
                         <FadeIn key={index} delay={index * 0.1}>
-                            <div
-                                className={`relative flex flex-col p-6 rounded-2xl border ${plan.highlight ? 'border-primary bg-white/5 scale-105 z-10 shadow-2xl shadow-primary/20' : 'border-white/10 bg-white/5'} transition-all duration-300 hover:border-primary/50 h-full`}
+                             <div
+                                className={`relative flex flex-col p-6 rounded-2xl border ${plan.highlight ? 'border-primary bg-card scale-105 z-10 shadow-2xl shadow-primary/20' : 'border-border bg-card'} transition-all duration-300 hover:border-primary/50 h-full`}
                             >
                                 {plan.highlight && (
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1 shadow-lg">
-                                        <Star className="w-3 h-3 fill-black" /> Best Value
+                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1 shadow-lg">
+                                        <Star className="w-3 h-3 fill-primary-foreground" /> Best Value
                                     </div>
                                 )}
 
                                 <div className="mb-6">
-                                    <h4 className="text-xl font-bold text-white uppercase mb-2">{plan.name}</h4>
+                                    <h4 className="text-xl font-bold text-foreground uppercase mb-2">{plan.name}</h4>
                                     <div className="flex items-baseline">
-                                        <span className="text-4xl font-black text-white">₹</span>
-                                        <span className="text-5xl font-black text-white">{plan.price}</span>
+                                        <span className="text-4xl font-black text-foreground">₹</span>
+                                        <span className="text-5xl font-black text-foreground">{plan.price}</span>
                                         <span className="text-muted-foreground ml-1 text-sm">{plan.period}</span>
                                     </div>
-                                    <p className="text-sm text-gray-400 mt-2">{plan.description}</p>
+                                    <p className="text-sm text-muted-foreground mt-2">{plan.description}</p>
                                 </div>
 
                                 <div className="flex-1 mb-6">
                                     <ul className="space-y-3">
                                         {plan.features.map((feature, i) => (
-                                            <li key={i} className="flex items-start text-sm text-gray-300">
+                                            <li key={i} className="flex items-start text-sm text-muted-foreground">
                                                 <Check className="w-4 h-4 text-primary mr-2 mt-0.5 shrink-0" />
                                                 {feature}
                                             </li>
@@ -109,7 +109,7 @@ export function Membership() {
                                 </div>
 
                                 <Button
-                                    className={`w-full font-bold uppercase tracking-wider ${plan.highlight ? 'bg-primary text-black hover:bg-primary/90' : 'bg-white/10 text-white hover:bg-white/20'}`}
+                                    className={`w-full font-bold uppercase tracking-wider ${plan.highlight ? 'bg-primary text-primary-foreground hover:bg-primary/90' : 'bg-muted text-foreground hover:bg-muted/80'}`}
                                     onClick={() => window.open(getWhatsappLink(plan.name), '_blank')}
                                 >
                                     {plan.cta}

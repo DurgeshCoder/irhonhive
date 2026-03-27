@@ -35,18 +35,7 @@ const HexagonGrid = () => {
         <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-[0.15] z-10">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-repeat opacity-50 mix-blend-overlay"></div>
             {/* Moving light effect */}
-            <motion.div
-                animate={{
-                    backgroundPosition: ["0% 0%", "100% 100%"]
-                }}
-                transition={{
-                    duration: 20,
-                    repeat: Infinity,
-                    repeatType: "reverse",
-                    ease: "linear"
-                }}
-                className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,rgba(255,215,0,0.1),transparent)]"
-            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,var(--color-primary),transparent)] opacity-[0.08]" />
         </div>
     )
 }
@@ -75,14 +64,14 @@ export function Hero() {
     const trialUrl = "https://wa.me/918127171111?text=Hi%20Ironhive,%20I'd%20like%20to%20book%20a%20free%20trial."
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20">
             {/* Real Image Background */}
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/images/hero-bg.jpg"
                     alt="Ironhive Gym Floor"
                     fill
-                    className="object-cover opacity-60"
+                    className="object-cover opacity-60 dark:opacity-40"
                     priority
                 />
             </div>
@@ -90,19 +79,19 @@ export function Hero() {
             <HexagonGrid />
 
             {/* Parallax Background Elements */}
-            <motion.div style={{ y: y1, opacity }} className="absolute inset-0 bg-honeycomb opacity-20 pointer-events-none z-10" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-black/80 pointer-events-none z-10" />
+            <motion.div style={{ y: y1, opacity }} className="absolute inset-0 bg-honeycomb opacity-[0.05] dark:opacity-20 pointer-events-none z-10" />
+            <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-background/80 pointer-events-none z-10" />
 
             {/* Orbs */}
             <motion.div
-                animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
+                animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
                 transition={{ duration: 8, repeat: Infinity }}
                 className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/20 blur-[150px] rounded-full pointer-events-none z-10"
             />
             <motion.div
-                animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.3, 0.2] }}
+                animate={{ scale: [1.2, 1, 1.2], opacity: [0.1, 0.2, 0.1] }}
                 transition={{ duration: 8, repeat: Infinity, delay: 4 }}
-                className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary/20 blur-[150px] rounded-full pointer-events-none z-10"
+                className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 blur-[150px] rounded-full pointer-events-none z-10"
             />
 
             {/* Content */}
@@ -111,19 +100,19 @@ export function Hero() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="inline-block mb-6 px-6 py-2 rounded-full border border-primary/20 bg-black/40 backdrop-blur-sm"
+                    className="inline-block mb-6 px-6 py-2 rounded-full border border-primary/30 bg-background/60 backdrop-blur-md shadow-sm"
                 >
                     <motion.div
-                        animate={{ opacity: [0.5, 1, 0.5] }}
+                        animate={{ opacity: [0.6, 1, 0.6] }}
                         transition={{ duration: 2, repeat: Infinity }}
                         className="flex items-center gap-4"
                     >
                         <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-primary box-shadow-neon" />
-                            <span className="text-primary font-mono text-sm tracking-widest uppercase font-bold">Welcome to the Hive</span>
+                            <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
+                            <span className="text-primary font-mono text-[10px] md:text-sm tracking-widest uppercase font-black">Welcome to the Hive</span>
                         </div>
-                        <div className="h-4 w-px bg-white/20 px-0.5" />
-                        <span className="text-white font-black text-sm uppercase tracking-tighter">Free Trial Available</span>
+                        <div className="h-4 w-px bg-border" />
+                        <span className="text-foreground font-black text-[10px] md:text-sm uppercase tracking-tighter">Free Trial Available</span>
                     </motion.div>
                 </motion.div>
 
@@ -133,16 +122,16 @@ export function Hero() {
                     animate="visible"
                     className="mb-8"
                 >
-                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-white leading-none flex flex-wrap justify-center gap-x-4 drop-shadow-2xl">
-                        <span className="w-full text-primary font-mono text-lg tracking-[0.3em] mb-4">Best Gym in Gomti Nagar Lucknow</span>
+                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-foreground leading-none flex flex-wrap justify-center gap-x-4">
+                        <span className="w-full text-primary font-mono text-sm md:text-lg tracking-[0.3em] mb-4">Best Gym in Gomti Nagar Lucknow</span>
                         {"TRANSFORM".split("").map((char, i) => (
-                            <motion.span key={i} variants={letterVariants} transition={{ type: "spring", damping: 12, stiffness: 200 }}>
+                            <motion.span key={char + i} variants={letterVariants} transition={{ type: "spring", damping: 12, stiffness: 200 }}>
                                 {char}
                             </motion.span>
                         ))}
                         <span className="w-full md:w-auto" />
                         <span className="relative">
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-400">
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-foreground to-foreground/60">
                                 YOUR LIFE
                             </span>
                         </span>
@@ -153,7 +142,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto mb-12 font-medium leading-relaxed drop-shadow-lg"
+                    className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12 font-medium leading-relaxed"
                 >
                     Reach your fitness goals at the <span className="text-primary font-bold">top-rated fitness center in Lucknow</span>. Located in the heart of <span className="text-primary font-bold">Gomti Nagar</span>, we provide world-class equipment and certified personal trainers near you.
                 </motion.p>
@@ -166,31 +155,31 @@ export function Hero() {
                 >
                     <Button
                         size="lg"
-                        className="group bg-primary text-black hover:bg-white hover:scale-105 transition-all duration-300 font-black uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg] shadow-[0_0_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_40px_rgba(255,255,255,0.6)]"
+                        className="group bg-primary text-primary-foreground hover:bg-foreground hover:text-background hover:scale-105 transition-all duration-300 font-black uppercase tracking-widest h-14 px-10 text-lg skew-x-10 shadow-lg shadow-primary/20"
                         onClick={() => window.open(whatsappUrl, '_blank')}
                     >
-                        <span className="skew-x-[10deg] flex items-center gap-2 group-hover:translate-x-1 transition-transform">
-                            Join The Hive <ArrowRight className="w-5 h-5" />
+                        <span className="skew-x-10 flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+                            Join The Hive <ArrowRight className="w-5 h-5 transition-transform" />
                         </span>
                     </Button>
                     <Button
                         size="lg"
                         variant="outline"
-                        className="group text-white border-white/40 bg-black/20 hover:bg-black/50 hover:border-white backdrop-blur-sm font-bold uppercase tracking-widest h-14 px-10 text-lg skew-x-[-10deg]"
+                        className="group text-foreground border-border bg-background/40 hover:bg-muted/80 backdrop-blur-sm font-bold uppercase tracking-widest h-14 px-10 text-lg skew-x-10 border-2"
                         onClick={() => window.open(trialUrl, '_blank')}
                     >
-                        <span className="skew-x-[10deg] flex items-center gap-2">
+                        <span className="skew-x-10 flex items-center gap-2">
                             Book Free Trial
                         </span>
                     </Button>
                 </motion.div>
 
-                {/* Stats Strip - Updated Style */}
+                {/* Stats Strip */}
                 <motion.div
-                    initial={{ opacity: 0, scaleY: 0 }}
-                    animate={{ opacity: 1, scaleY: 1 }}
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1 }}
-                    className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto border-t border-white/20 pt-12 bg-black/60 backdrop-blur-md rounded-t-3xl shadow-2xl pb-8 px-4"
+                    className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto border-t border-border pt-12 bg-card/60 backdrop-blur-md rounded-2xl shadow-xl pb-12 px-4 border shadow-primary/5"
                 >
                     {[
                         { label: "Members Trained", value: "2500+" },
@@ -198,11 +187,11 @@ export function Hero() {
                         { label: "Expert Coaches", value: "15+" },
                         { label: "Years Strong", value: "10+" },
                     ].map((stat, index) => (
-                        <div key={index} className="text-center group hover:scale-110 transition-transform duration-300 cursor-default">
-                            <div className="text-4xl md:text-5xl font-black text-white mb-2 font-mono flex justify-center items-center">
+                        <div key={stat.label} className="text-center group hover:scale-110 transition-transform duration-300 cursor-default">
+                            <div className="text-3xl md:text-5xl font-black text-foreground mb-2 font-mono flex justify-center items-center">
                                 <AnimatedCounter value={stat.value} />
                             </div>
-                            <div className="text-xs md:text-sm text-primary uppercase tracking-[0.2em] font-bold">{stat.label}</div>
+                            <div className="text-[10px] md:text-sm text-primary uppercase tracking-[0.2em] font-black">{stat.label}</div>
                         </div>
                     ))}
                 </motion.div>
@@ -213,11 +202,11 @@ export function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 1 }}
-                className="absolute bottom-10 left-0 right-0 flex justify-center z-20"
+                className="absolute bottom-10 left-0 right-0 flex justify-center z-20 pointer-events-none"
             >
                 <div className="flex flex-col items-center gap-2">
-                    <span className="text-[10px] uppercase tracking-widest text-white/50">Scroll</span>
-                    <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-black">Scroll</span>
+                    <div className="w-6 h-10 border-2 border-border rounded-full flex justify-center p-1">
                         <motion.div
                             animate={{ y: [0, 12, 0] }}
                             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}

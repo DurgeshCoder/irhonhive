@@ -37,20 +37,29 @@ export const metadata: Metadata = {
   },
 };
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
       >
-        <Navbar />
-        <main>{children}</main>
-        <SiteFooter />
-        <ScrollToTop />
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+        >
+            <Navbar />
+            <main>{children}</main>
+            <SiteFooter />
+            <ScrollToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

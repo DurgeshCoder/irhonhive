@@ -76,12 +76,12 @@ export const blogArticles = [
 
 export function BlogList() {
     return (
-        <section className="py-24 bg-black min-h-screen">
+        <section className="py-24 bg-background min-h-screen">
             <div className="container mx-auto px-4 pt-20">
                 <FadeIn>
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h1 className="text-primary font-mono text-sm tracking-wider uppercase mb-2">The Knowledge Base</h1>
-                        <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">
+                        <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase tracking-tighter mb-4">
                             Latest <span className="text-primary">Articles</span>
                         </h2>
                         <p className="text-muted-foreground italic">Expert advice on training, nutrition, and lifestyle to help you conquer your goals.</p>
@@ -92,31 +92,31 @@ export function BlogList() {
                     {blogArticles.map((article, index) => (
                         <FadeIn key={article.id} delay={index * 0.1}>
                             <Link href={`/blog/${article.id}`} className="group block h-full">
-                                <article className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 h-full flex flex-col">
+                                <article className="bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 h-full flex flex-col shadow-lg">
                                     <div className="relative aspect-video">
                                         <div 
                                             className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                                             style={{ backgroundImage: `url(${article.image})` }}
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+                                        <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent opacity-60" />
                                         <div className="absolute top-4 left-4">
-                                            <span className="bg-primary text-black text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-widest shadow-lg">
+                                            <span className="bg-primary text-primary-foreground text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-widest shadow-lg">
                                                 {article.category}
                                             </span>
                                         </div>
                                     </div>
                                     
                                     <div className="p-6 flex flex-col flex-1">
-                                        <div className="flex items-center gap-4 text-xs text-gray-500 mb-4 font-mono">
+                                        <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4 font-mono">
                                             <span className="flex items-center gap-1.5"><Calendar className="w-3 h-3" /> {article.date}</span>
                                             <span className="flex items-center gap-1.5"><User className="w-3 h-3" /> {article.author}</span>
                                         </div>
                                         
-                                        <h3 className="text-xl font-bold text-white uppercase tracking-tight mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                                        <h3 className="text-xl font-bold text-foreground uppercase tracking-tight mb-3 group-hover:text-primary transition-colors line-clamp-2">
                                             {article.title}
                                         </h3>
                                         
-                                        <p className="text-gray-400 text-sm line-clamp-3 mb-6 flex-1">
+                                        <p className="text-muted-foreground text-sm line-clamp-3 mb-6 flex-1">
                                             {article.excerpt}
                                         </p>
                                         

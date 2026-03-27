@@ -46,7 +46,7 @@ const programs = [
 
 export function Programs() {
     return (
-        <section id="programs" className="py-16 md:py-24 bg-black relative">
+        <section id="programs" className="py-16 md:py-24 bg-background relative">
             {/* Background accent */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -54,8 +54,8 @@ export function Programs() {
                 <FadeIn delay={0.1}>
                     <div className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-primary font-mono text-sm tracking-wider uppercase mb-2">Our Programs</h2>
-                        <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
-                            Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">Weapon</span>
+                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4">
+                            Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/50">Weapon</span>
                         </h3>
                         <p className="text-muted-foreground">
                             Whether you want to build mass, shred fat, or improve performance, we have a battle-tested program for you.
@@ -66,18 +66,18 @@ export function Programs() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {programs.map((program, index) => (
                         <FadeIn key={index} delay={index * 0.1}>
-                            <Card className="bg-white/5 border-white/10 hover:border-primary/50 transition-colors group overflow-hidden h-full flex flex-col">
+                             <Card className="bg-card border-border hover:border-primary/50 transition-colors group overflow-hidden h-full flex flex-col shadow-lg">
                                 <CardHeader>
-                                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-black transition-colors duration-300">
-                                        <program.icon className="w-6 h-6 text-primary group-hover:text-black transition-colors duration-300" />
+                                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+                                        <program.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                                     </div>
-                                    <CardTitle className="text-2xl font-bold text-white uppercase">{program.title}</CardTitle>
-                                    <CardDescription className="text-gray-400">{program.description}</CardDescription>
+                                    <CardTitle className="text-2xl font-bold text-card-foreground uppercase">{program.title}</CardTitle>
+                                    <CardDescription className="text-muted-foreground">{program.description}</CardDescription>
                                 </CardHeader>
                                 <CardContent className="flex-1">
                                     <ul className="space-y-2">
                                         {program.benefits.map((benefit, i) => (
-                                            <li key={i} className="flex items-center text-sm text-gray-300">
+                                            <li key={i} className="flex items-center text-sm text-muted-foreground">
                                                 <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
                                                 {benefit}
                                             </li>
