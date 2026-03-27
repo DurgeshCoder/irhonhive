@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useEffect, useRef } from "react"
 import Image from "next/image"
-
+import heroImage from "@/assets/images/hero_ironhive_fitness.jpg"
 const AnimatedCounter = ({ value }: { value: string }) => {
     const ref = useRef<HTMLSpanElement>(null)
     const motionValue = useMotionValue(0)
@@ -68,7 +68,7 @@ export function Hero() {
             {/* Real Image Background */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/images/hero-bg.jpg"
+                   src={heroImage}
                     alt="Ironhive Gym Floor"
                     fill
                     className="object-cover opacity-60 dark:opacity-40"
