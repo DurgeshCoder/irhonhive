@@ -16,11 +16,11 @@ export function Contact() {
                     <div className="space-y-8">
                         <FadeIn direction="right">
                             <div>
-                                <h2 className="text-primary font-mono text-sm tracking-wider uppercase mb-2">Get In Touch</h2>
-                                <h3 className="text-4xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4">
+                                <h2 className="text-primary font-mono text-xs md:text-sm tracking-widest uppercase mb-2">Get In Touch</h2>
+                                <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4 leading-tight">
                                     Start Your <span className="text-primary">Journey</span>
                                 </h3>
-                                <p className="text-muted-foreground text-lg">
+                                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                                     Ready to transform? Visit the <span className="text-primary font-bold">top-rated gym in Gomti Nagar Lucknow</span>. We are located near major landmarks to ensure easy access for residents of Gomti Nagar and surrounding areas.
                                 </p>
                             </div>

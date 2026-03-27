@@ -32,15 +32,15 @@ export function YoutubeFeed() {
         <section id="videos" className="py-16 md:py-24 bg-background relative border-t border-border">
             <div className="container mx-auto px-4">
                 <FadeIn>
-                    <div className="text-center max-w-3xl mx-auto mb-16">
+                    <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
                         <div className="flex items-center justify-center gap-2 mb-4">
-                            <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
-                            <span className="text-red-500 font-mono text-sm tracking-widest uppercase font-bold">Trending Now</span>
+                            <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse shadow-[0_0_8px_rgba(220,38,38,0.8)]" />
+                            <span className="text-red-500 font-mono text-xs md:text-sm tracking-widest uppercase font-black">Trending Now</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-black text-foreground uppercase tracking-tighter mb-6 leading-none">
+                        <h2 className="text-3xl md:text-6xl font-black text-foreground uppercase tracking-tighter mb-6 leading-[0.9]">
                             Watch The <span className="text-transparent bg-clip-text bg-linear-to-r from-red-500 to-red-800">Muscle Game</span>
                         </h2>
-                        <p className="text-muted-foreground text-lg">
+                        <p className="text-muted-foreground text-sm md:text-lg px-4">
                             Daily motivation, technique tips, and raw training footage straight from the floor.
                         </p>
                     </div>
@@ -49,7 +49,7 @@ export function YoutubeFeed() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {videos.map((video, index) => (
                         <FadeIn key={index} delay={index * 0.1}>
-                            <div className="relative aspect-[9/16] rounded-2xl overflow-hidden border border-border bg-card group shadow-lg">
+                            <div className="relative aspect-9/16 rounded-2xl overflow-hidden border border-border bg-card group shadow-lg">
                                 <iframe
                                     className="absolute inset-0 w-full h-full"
                                     src={`https://www.youtube.com/embed/${video.id}?autoplay=0&controls=1&rel=0&loop=1`}

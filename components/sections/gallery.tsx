@@ -100,12 +100,12 @@ export function Gallery() {
         <section id="gallery" className="py-16 md:py-24 bg-background relative">
             <div className="container mx-auto px-4">
                 <FadeIn>
-                    <div className="text-center max-w-3xl mx-auto mb-12">
-                        <h2 className="text-primary font-mono text-sm tracking-wider uppercase mb-2">The Arsenal</h2>
-                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4">
+                    <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+                        <h2 className="text-primary font-mono text-xs md:text-sm tracking-widest uppercase mb-2">The Arsenal</h2>
+                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4 leading-tight">
                             Inside The <span className="text-primary">Hive</span>
                         </h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground text-sm md:text-base px-4">
                             Explore our world-class facility, premium equipment, and the tools you need to forge your ultimate physique.
                         </p>
                     </div>
@@ -142,7 +142,7 @@ export function Gallery() {
                                 exit={{ opacity: 0, scale: 0.9 }}
                                 transition={{ duration: 0.3 }}
                                 key={item.id}
-                                className={`relative group overflow-hidden rounded-xl bg-muted border border-border aspect-[4/3] cursor-pointer shadow-sm`}
+                                className={`relative group overflow-hidden rounded-xl bg-muted border border-border aspect-4/3 cursor-pointer shadow-sm`}
                                 onClick={() => setSelectedImage(item)}
                             >
                                 {/* Real Image */}

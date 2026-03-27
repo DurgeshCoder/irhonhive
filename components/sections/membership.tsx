@@ -50,24 +50,24 @@ export function Membership() {
 
             <div className="container mx-auto px-4 relative z-10">
                 <FadeIn direction="right">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-primary font-mono text-sm tracking-wider uppercase mb-2">Membership Plans</h2>
-                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4">
-                            Invest In Your <span className="text-primary">Strength</span>
+                    <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                        <h2 className="text-primary font-mono text-xs md:text-sm tracking-widest uppercase mb-2">Our Programs</h2>
+                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4 leading-tight">
+                            Choose Your <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary to-primary/50">Weapon</span>
                         </h3>
-                        <p className="text-muted-foreground mb-6">
-                            Flexible plans designed to fit your goals and lifestyle. {registrationFee}.
+                        <p className="text-muted-foreground text-sm md:text-base px-4">
+                            Whether you want to build mass, shred fat, or improve performance, we have a battle-tested program for you.
                         </p>
                         
-                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-                            <div className="bg-primary/20 border border-primary/30 rounded-xl px-6 py-3 flex items-center gap-3 animate-pulse">
-                                <div className="w-2 h-2 rounded-full bg-primary box-shadow-neon" />
-                                <span className="text-primary font-black uppercase tracking-widest text-lg">Free Trial Session Available</span>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6 md:mb-8 px-4">
+                            <div className="w-full sm:w-auto bg-primary/20 border border-primary/30 rounded-xl px-6 py-3 flex items-center justify-center gap-3 animate-pulse">
+                                <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_var(--primary)]" />
+                                <span className="text-primary font-black uppercase tracking-widest text-base md:text-lg">Free Trial Available</span>
                             </div>
                             <div className="hidden sm:block h-8 w-px bg-border" />
-                            <div className="bg-card border border-border rounded-xl px-6 py-3">
-                                <p className="text-foreground font-bold text-sm uppercase tracking-wider">
-                                    Timing: 5.30am - 11.30am | 4.00pm - 10.00pm
+                            <div className="w-full sm:w-auto bg-card border border-border rounded-xl px-6 py-3 shadow-sm">
+                                <p className="text-foreground font-bold text-[10px] md:text-xs uppercase tracking-widest">
+                                    5:30am - 11:30am | 4:00pm - 10:00pm
                                 </p>
                             </div>
                         </div>
@@ -79,7 +79,7 @@ export function Membership() {
                     {plans.map((plan, index) => (
                         <FadeIn key={index} delay={index * 0.1}>
                              <div
-                                className={`relative flex flex-col p-6 rounded-2xl border ${plan.highlight ? 'border-primary bg-card scale-105 z-10 shadow-2xl shadow-primary/20' : 'border-border bg-card'} transition-all duration-300 hover:border-primary/50 h-full`}
+                                className={`relative flex flex-col p-6 rounded-2xl border ${plan.highlight ? 'border-primary bg-card md:scale-105 z-10 shadow-2xl shadow-primary/20' : 'border-border bg-card'} transition-all duration-300 hover:border-primary/50 h-full`}
                             >
                                 {plan.highlight && (
                                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1 shadow-lg">

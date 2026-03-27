@@ -122,14 +122,14 @@ export function Hero() {
                     animate="visible"
                     className="mb-8"
                 >
-                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-foreground leading-none flex flex-wrap justify-center gap-x-4">
-                        <span className="w-full text-primary font-mono text-sm md:text-lg tracking-[0.3em] mb-4">Best Gym in Gomti Nagar Lucknow</span>
+                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-foreground leading-[0.9] flex flex-wrap justify-center gap-x-2 md:gap-x-4">
+                        <span className="w-full text-primary font-mono text-xs md:text-lg tracking-[0.2em] md:tracking-[0.3em] mb-4">Best Gym in Gomti Nagar Lucknow</span>
                         {"TRANSFORM".split("").map((char, i) => (
                             <motion.span key={char + i} variants={letterVariants} transition={{ type: "spring", damping: 12, stiffness: 200 }}>
                                 {char}
                             </motion.span>
                         ))}
-                        <span className="w-full md:w-auto" />
+                        <span className="w-full" />
                         <span className="relative">
                             <span className="text-transparent bg-clip-text bg-linear-to-r from-foreground to-foreground/60">
                                 YOUR LIFE
@@ -142,7 +142,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12 font-medium leading-relaxed"
+                    className="text-base md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 md:mb-12 font-medium leading-relaxed px-4"
                 >
                     Reach your fitness goals at the <span className="text-primary font-bold">top-rated fitness center in Lucknow</span>. Located in the heart of <span className="text-primary font-bold">Gomti Nagar</span>, we provide world-class equipment and certified personal trainers near you.
                 </motion.p>
@@ -155,7 +155,7 @@ export function Hero() {
                 >
                     <Button
                         size="lg"
-                        className="group bg-primary text-primary-foreground hover:bg-foreground hover:text-background hover:scale-105 transition-all duration-300 font-black uppercase tracking-widest h-14 px-10 text-lg skew-x-10 shadow-lg shadow-primary/20"
+                        className="w-full sm:w-auto group bg-primary text-primary-foreground hover:bg-foreground hover:text-background hover:scale-105 transition-all duration-300 font-black uppercase tracking-widest h-14 px-10 text-lg skew-x-10 shadow-lg shadow-primary/20"
                         onClick={() => window.open(whatsappUrl, '_blank')}
                     >
                         <span className="skew-x-10 flex items-center gap-2 group-hover:translate-x-1 transition-transform">
@@ -165,7 +165,7 @@ export function Hero() {
                     <Button
                         size="lg"
                         variant="outline"
-                        className="group text-foreground border-border bg-background/40 hover:bg-muted/80 backdrop-blur-sm font-bold uppercase tracking-widest h-14 px-10 text-lg skew-x-10 border-2"
+                        className="w-full sm:w-auto group text-foreground border-border bg-background/40 hover:bg-muted/80 backdrop-blur-sm font-bold uppercase tracking-widest h-14 px-10 text-lg skew-x-10 border-2"
                         onClick={() => window.open(trialUrl, '_blank')}
                     >
                         <span className="skew-x-10 flex items-center gap-2">
@@ -179,7 +179,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1 }}
-                    className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto border-t border-border pt-12 bg-card/60 backdrop-blur-md rounded-2xl shadow-xl pb-12 px-4 border shadow-primary/5"
+                    className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-5xl mx-auto border-t border-border pt-10 md:pt-12 bg-card/60 backdrop-blur-md rounded-2xl shadow-xl pb-10 md:pb-12 px-4 border shadow-primary/5"
                 >
                     {[
                         { label: "Members Trained", value: "2500+" },
@@ -187,11 +187,11 @@ export function Hero() {
                         { label: "Expert Coaches", value: "15+" },
                         { label: "Years Strong", value: "10+" },
                     ].map((stat, index) => (
-                        <div key={stat.label} className="text-center group hover:scale-110 transition-transform duration-300 cursor-default">
-                            <div className="text-3xl md:text-5xl font-black text-foreground mb-2 font-mono flex justify-center items-center">
+                        <div key={stat.label} className="text-center group hover:scale-105 transition-transform duration-300 cursor-default">
+                            <div className="text-2xl md:text-5xl font-black text-foreground mb-1 md:mb-2 font-mono flex justify-center items-center">
                                 <AnimatedCounter value={stat.value} />
                             </div>
-                            <div className="text-[10px] md:text-sm text-primary uppercase tracking-[0.2em] font-black">{stat.label}</div>
+                            <div className="text-[9px] md:text-sm text-primary uppercase tracking-widest font-black">{stat.label}</div>
                         </div>
                     ))}
                 </motion.div>

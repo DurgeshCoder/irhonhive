@@ -52,12 +52,12 @@ export function Programs() {
 
             <div className="container mx-auto px-4 relative z-10">
                 <FadeIn delay={0.1}>
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-primary font-mono text-sm tracking-wider uppercase mb-2">Our Programs</h2>
-                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4">
-                            Choose Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/50">Weapon</span>
+                    <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+                        <h2 className="text-primary font-mono text-xs md:text-sm tracking-widest uppercase mb-2">Our Programs</h2>
+                        <h3 className="text-3xl md:text-5xl font-black text-foreground uppercase tracking-tighter mb-4 leading-tight">
+                            Choose Your <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary to-primary/50">Weapon</span>
                         </h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground text-sm md:text-base px-4">
                             Whether you want to build mass, shred fat, or improve performance, we have a battle-tested program for you.
                         </p>
                     </div>
