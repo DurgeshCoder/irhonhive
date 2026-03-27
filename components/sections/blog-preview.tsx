@@ -1,30 +1,29 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 const articles = [
     {
-        title: "The Science of Hypertrophy",
+        title: "How to Get Fit: A Beginner's Guide",
         category: "Training",
-        excerpt: "Understand the physiological mechanisms behind muscle growth to optimize your lifting.",
-        date: "Dec 12, 2024",
-        image: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop",
-    },
-    {
-        title: "Fueling for Performance",
-        category: "Nutrition",
-        excerpt: "What to eat before and after your workout to maximize energy and recovery.",
-        date: "Dec 08, 2024",
+        excerpt: "Starting your fitness journey can be overwhelming. Here's a step-by-step guide to starting right.",
+        date: "March 27, 2026",
         image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop",
     },
     {
-        title: "Mastering the Deadlift",
-        category: "Technique",
-        excerpt: "A comprehensive guide to perfecting your form on the king of all exercises.",
-        date: "Nov 28, 2024",
-        image: "https://images.unsplash.com/photo-1517963879466-e1b54ebd7690?q=80&w=1974&auto=format&fit=crop",
+        title: "Maintain results Long-Term",
+        category: "Lifestyle",
+        excerpt: "Winning the battle is one thing; winning the war is another. Secrets to maintenance.",
+        date: "March 25, 2026",
+        image: "https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=2070&auto=format&fit=crop",
+    },
+    {
+        title: "Best Gym in Gomti Nagar",
+        category: "Community",
+        excerpt: "Explore the facilities and culture that make Ironhive the top-rated fitness center in Lucknow.",
+        date: "March 20, 2026",
+        image: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=2070&auto=format&fit=crop",
     },
 ]
 
@@ -39,34 +38,36 @@ export function BlogPreview() {
                             Latest <span className="text-primary">Intel</span>
                         </h3>
                     </div>
-                    <Button variant="ghost" className="hidden md:flex text-white hover:text-primary uppercase tracking-wider font-bold">
-                        View All Articles <ArrowRight className="ml-2 w-4 h-4" />
+                    <Button variant="ghost" className="hidden md:flex text-gray-500 uppercase tracking-wider font-bold cursor-not-allowed">
+                        Coming Soon <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {articles.map((article, index) => (
-                        <div key={index} className="group cursor-pointer">
-                            <div className="aspect-video bg-neutral-800 rounded-lg overflow-hidden mb-4 relative">
-                                {/* Image Placeholder if actual image fails */}
-                                <div className="w-full h-full bg-neutral-800 flex items-center justify-center text-white/10">Image</div>
-                                <div className="absolute top-4 left-4 bg-primary text-black text-xs font-bold px-3 py-1 uppercase rounded-full">
+                        <div key={index} className="group cursor-default">
+                            <div className="aspect-video bg-neutral-800 rounded-lg overflow-hidden mb-4 relative shadow-2xl">
+                                <div 
+                                    className="absolute inset-0 bg-cover bg-center grayscale"
+                                    style={{ backgroundImage: `url(${article.image})` }}
+                                />
+                                <div className="absolute top-4 left-4 bg-primary text-black text-[10px] font-black px-3 py-1 uppercase rounded-full tracking-widest">
                                     {article.category}
                                 </div>
                             </div>
-                            <h4 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                            <h4 className="text-xl font-bold text-white mb-2 uppercase tracking-tight">
                                 {article.title}
                             </h4>
                             <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
                                 {article.excerpt}
                             </p>
-                            <span className="text-xs text-gray-500 font-mono">{article.date}</span>
+                            <span className="text-xs text-gray-500 font-mono italic">{article.date}</span>
                         </div>
                     ))}
                 </div>
 
-                <Button variant="ghost" className="md:hidden mt-8 w-full text-white hover:text-primary uppercase tracking-wider font-bold">
-                    View All Articles <ArrowRight className="ml-2 w-4 h-4" />
+                <Button variant="ghost" className="md:hidden mt-8 w-full text-gray-500 uppercase tracking-wider font-bold cursor-not-allowed text-center">
+                    Coming Soon <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
             </div>
         </section>
