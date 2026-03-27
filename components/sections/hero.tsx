@@ -71,8 +71,8 @@ export function Hero() {
         visible: { opacity: 1, y: 0, rotateX: 0 }
     }
 
-    const whatsappUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I%20want%20to%20Join!"
-    const trialUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I'd%20like%20to%20book%20a%20free%20trial."
+    const whatsappUrl = "https://wa.me/918127171111?text=Hi%20Ironhive,%20I%20want%20to%20Join!"
+    const trialUrl = "https://wa.me/918127171111?text=Hi%20Ironhive,%20I'd%20like%20to%20book%20a%20free%20trial."
 
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
@@ -116,10 +116,14 @@ export function Hero() {
                     <motion.div
                         animate={{ opacity: [0.5, 1, 0.5] }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="flex items-center gap-2"
+                        className="flex items-center gap-4"
                     >
-                        <div className="w-2 h-2 rounded-full bg-primary box-shadow-neon" />
-                        <span className="text-primary font-mono text-sm tracking-widest uppercase font-bold">Welcome to the Hive</span>
+                        <div className="flex items-center gap-2">
+                            <div className="w-2 h-2 rounded-full bg-primary box-shadow-neon" />
+                            <span className="text-primary font-mono text-sm tracking-widest uppercase font-bold">Welcome to the Hive</span>
+                        </div>
+                        <div className="h-4 w-px bg-white/20 px-0.5" />
+                        <span className="text-white font-black text-sm uppercase tracking-tighter">Free Trial Available</span>
                     </motion.div>
                 </motion.div>
 
@@ -129,23 +133,18 @@ export function Hero() {
                     animate="visible"
                     className="mb-8"
                 >
-                    <h1 className="text-4xl sm:text-6xl lg:text-9xl font-black uppercase tracking-tighter text-white leading-none flex flex-wrap justify-center gap-x-4 drop-shadow-2xl">
+                    <h1 className="text-4xl sm:text-6xl lg:text-8xl font-black uppercase tracking-tighter text-white leading-none flex flex-wrap justify-center gap-x-4 drop-shadow-2xl">
+                        <span className="w-full text-primary font-mono text-lg tracking-[0.3em] mb-4">Best Gym in Gomti Nagar Lucknow</span>
                         {"TRANSFORM".split("").map((char, i) => (
                             <motion.span key={i} variants={letterVariants} transition={{ type: "spring", damping: 12, stiffness: 200 }}>
                                 {char}
                             </motion.span>
                         ))}
-                        <span className="w-full md:w-auto" /> {/* Break on mobile */}
+                        <span className="w-full md:w-auto" />
                         <span className="relative">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-400">
-                                YOUR BODY
+                                YOUR LIFE
                             </span>
-                            <motion.span
-                                initial={{ width: "0%" }}
-                                animate={{ width: "100%" }}
-                                transition={{ delay: 1, duration: 0.8, ease: "circOut" }}
-                                className="absolute bottom-2 left-0 h-2 md:h-4 bg-primary -z-10 opacity-70 skew-x-12"
-                            />
                         </span>
                     </h1>
                 </motion.div>
@@ -156,7 +155,7 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.6 }}
                     className="text-lg md:text-2xl text-gray-200 max-w-2xl mx-auto mb-12 font-medium leading-relaxed drop-shadow-lg"
                 >
-                    Reach your fitness goals with the <span className="text-primary font-bold">best equipment</span> and <span className="text-primary font-bold">trainers</span> in Lucknow.
+                    Reach your fitness goals at the <span className="text-primary font-bold">top-rated fitness center in Lucknow</span>. Located in the heart of <span className="text-primary font-bold">Gomti Nagar</span>, we provide world-class equipment and certified personal trainers near you.
                 </motion.p>
 
                 <motion.div

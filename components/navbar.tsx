@@ -28,7 +28,7 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
 
-    const whatsappUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I'm%20interested%20in%20joining!"
+    const whatsappUrl = "https://wa.me/918127171111?text=Hi%20Ironhive%20Fitness%20Gym,%20I'm%20interested%20in%20joining!"
 
     return (
         <header
@@ -43,7 +43,7 @@ export function Navbar() {
                             <div className="w-1.5 h-4 bg-black/80 rotate-12" />
                         </div>
                     </div>
-                    <span className="text-xl font-bold tracking-tighter uppercase">Ironhive<span className="text-primary">.</span></span>
+                    <span className="text-xl font-bold tracking-tighter uppercase leading-tight">Ironhive<br className="sm:hidden" /><span className="text-primary ml-1">Fitness Gym</span></span>
                 </Link>
 
                 {/* Desktop Nav */}

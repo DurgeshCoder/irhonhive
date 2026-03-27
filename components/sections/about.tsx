@@ -42,7 +42,7 @@ export function About() {
                             </h3>
                             <div className="space-y-6 text-muted-foreground text-lg">
                                 <p>
-                                    Ironhive Fitness wasn’t built to be just another place to sweat. It was forged to be a sanctuary for those who refuse to settle for average.
+                                    Ironhive Fitness Gym wasn’t built to be just another place to sweat. It was forged to be a sanctuary for those who refuse to settle for average.
                                 </p>
                                 <p>
                                     Inspired by the collective strength and industrial efficiency of the hive, we believe that individual power is amplified by community. Here, steel meets soul.

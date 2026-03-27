@@ -16,7 +16,7 @@ export function SiteFooter() {
                                     <div className="w-1.5 h-4 bg-black/80 rotate-12" />
                                 </div>
                             </div>
-                            <span className="text-xl font-bold tracking-tighter uppercase text-white">Ironhive<span className="text-primary">.</span></span>
+                            <span className="text-xl font-bold tracking-tighter uppercase text-white leading-tight">Ironhive<br className="sm:hidden" /><span className="text-primary ml-1">Fitness Gym</span></span>
                         </Link>
                         <p className="text-gray-400 text-sm leading-relaxed mb-6">
                             Forging strength, discipline, and community since 2014. Join the hive and become the best version of yourself.
@@ -54,11 +54,11 @@ export function SiteFooter() {
                         <ul className="space-y-3 text-sm text-gray-400">
                             <li className="flex justify-between items-center bg-white/5 p-3 rounded">
                                 <span className="uppercase tracking-wide text-xs">Morning</span>
-                                <span className="text-white font-bold">6:00 AM - 11:00 AM</span>
+                                <span className="text-white font-bold">5:30 AM - 11:30 AM</span>
                             </li>
                             <li className="flex justify-between items-center bg-white/5 p-3 rounded">
                                 <span className="uppercase tracking-wide text-xs">Evening</span>
-                                <span className="text-white font-bold">4:00 PM - 11:00 PM</span>
+                                <span className="text-white font-bold">4:00 PM - 10:00 PM</span>
                             </li>
                             <li className="mt-4 text-xs text-gray-500 text-center">
                                 Open 7 Days A Week
@@ -69,7 +69,7 @@ export function SiteFooter() {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-500 text-xs">
-                        © {new Date().getFullYear()} Ironhive Fitness. All rights reserved.
+                        © {new Date().getFullYear()} Ironhive Fitness Gym. All rights reserved.
                     </p>
                     <div className="flex gap-6 items-center">
                         <Link href="#" className="text-gray-500 hover:text-white text-xs uppercase tracking-wider">Privacy Policy</Link>

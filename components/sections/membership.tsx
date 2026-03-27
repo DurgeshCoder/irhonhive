@@ -4,15 +4,15 @@ import { Button } from "@/components/ui/button"
 import { Check, Star } from "lucide-react"
 import { FadeIn } from "@/components/ui/fade-in"
 
-// Updated plans with Rupee Pricing for Lucknow Gym
+// Updated plans from the flyer pricing
 const plans = [
     {
-        name: "Basic",
-        price: "2000",
+        name: "Monthly",
+        price: "1500",
         period: "/mo",
-        description: "Essential monthly access to gym facilities.",
-        features: ["Access to Gym Floor", "General Trainer Support", "Locker Access", "Open 6am - 10pm"],
-        cta: "Join Basic",
+        description: "Standard monthly access to gym facilities.",
+        features: ["Access to Gym Floor", "General Trainer Support", "Locker Access", "Strength + HIIT"],
+        cta: "Join Monthly",
         highlight: false,
     },
     {
@@ -20,43 +20,27 @@ const plans = [
         price: "4000",
         period: "/3mo",
         description: "Commit to 3 months and save big.",
-        features: ["All Basic Features", "Diet Consultation", "Steam Room Access (1/wk)", "Price Lock Guarantee"],
+        features: ["All Monthly Features", "Diet Plan & Nutrition", "Personal Coaching Support", "Zumba & Yoga Access"],
         cta: "Join Quarterly",
         highlight: true,
     },
     {
         name: "Half Yearly",
-        price: "6000",
+        price: "7000",
         period: "/6mo",
         description: "Serious commitment for serious results.",
-        features: ["All Quarterly Features", "Unlimited Steam Room", "Full Body Assessment", "2 Guest Passes"],
+        features: ["All Quarterly Features", "Advanced Weight Training", "Special Batch Access", "Priority Support"],
         cta: "Join Half Yearly",
         highlight: false,
     },
-    {
-        name: "Yearly",
-        price: "8000",
-        period: "/yr",
-        description: "Best value for long-term transformation.",
-        features: ["All Half-Yearly Features", "Priority Support", "Personal Locker", "Free T-Shirt", "Freeze Membership Option"],
-        cta: "Join Yearly",
-        highlight: false,
-    },
-    {
-        name: "Personal Training",
-        price: "10000",
-        period: "/mo",
-        description: "Dedicated 1-on-1 coaching for maximum results.",
-        features: ["Gym Membership Included", "12 PT Sessions/mo", "Custom Meal Plans", "Daily Check-ins", "Performance Tracking"],
-        cta: "Get Coached",
-        highlight: false,
-    },
-]
+];
+
+const registrationFee = "300 Registration Charges Apply";
 
 export function Membership() {
     const getWhatsappLink = (planName: string) => {
         const text = encodeURIComponent(`Hi Ironhive, I'm interested in the ${planName} membership plan.`);
-        return `https://wa.me/917007552746?text=${text}`;
+        return `https://wa.me/918127171111?text=${text}`;
     }
 
     return (
@@ -71,9 +55,22 @@ export function Membership() {
                         <h3 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
                             Invest In Your <span className="text-primary">Strength</span>
                         </h3>
-                        <p className="text-muted-foreground">
-                            Flexible plans designed to fit your goals and lifestyle. No hidden fees.
+                        <p className="text-muted-foreground mb-6">
+                            Flexible plans designed to fit your goals and lifestyle. {registrationFee}.
                         </p>
+                        
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                            <div className="bg-primary/20 border border-primary/30 rounded-xl px-6 py-3 flex items-center gap-3 animate-pulse">
+                                <div className="w-2 h-2 rounded-full bg-primary box-shadow-neon" />
+                                <span className="text-primary font-black uppercase tracking-widest text-lg">Free Trial Session Available</span>
+                            </div>
+                            <div className="hidden sm:block h-8 w-px bg-white/10" />
+                            <div className="bg-white/5 border border-white/10 rounded-xl px-6 py-3">
+                                <p className="text-white/80 font-bold text-sm uppercase tracking-wider">
+                                    Timing: 5.30am - 11.30am | 4.00pm - 10.00pm
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </FadeIn>
 

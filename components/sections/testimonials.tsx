@@ -6,20 +6,20 @@ import { Star } from "lucide-react"
 const testimonials = [
     {
         name: "James T.",
-        role: "Member since 2019",
-        content: "The equipment is top tier, but the vibe is what keeps me coming back. It feels like a second home.",
+        role: "Gomti Nagar Resident",
+        content: "Hands down the best gym in Gomti Nagar Lucknow. The equipment is top tier, and the community vibe is unmatched. Worth every rupee!",
         rating: 5,
     },
     {
         name: "Sarah M.",
-        role: "Pro Athlete",
-        content: "I've trained at gyms all over the world. Ironhive has the best facility for serious strength training, period.",
+        role: "Professional from Gomti Nagar",
+        content: "I've tried many fitness centers in Lucknow, but Ironhive stands out for its hygiene and expert trainers. Perfect for working professionals like me.",
         rating: 5,
     },
     {
         name: "David K.",
         role: "Transformation Client",
-        content: "Lost 18kg in 6 months. The coaches didn't just give me a plan; they gave me a new lifestyle.",
+        content: "Lost 15kg in 4 months. If you are looking for a gym near you in Lucknow that actually delivers results, Ironhive is the place to be.",
         rating: 5,
     },
 ]

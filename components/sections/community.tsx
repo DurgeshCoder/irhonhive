@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 
 export function Community() {
-    const whatsappUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I%20want%20to%20join%20the%20community!"
+    const whatsappUrl = "https://wa.me/918127171111?text=Hi%20Ironhive%20Fitness%20Gym,%20I%20want%20to%20join%20the%20community!"
 
     return (
         <section id="community" className="py-24 relative overflow-hidden flex items-center bg-black">
@@ -17,7 +17,7 @@ export function Community() {
                         You Don't Just Join.<br />You <span className="text-primary">Belong.</span>
                     </h3>
                     <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-                        Ironhive isn't just about lifting weights; it's about lifting each other.
+                        Ironhive Fitness Gym isn't just about lifting weights; it's about lifting each other.
                         We are a collective of driven individuals united by the pursuit of strength.
                         When you step through our doors, you leave your ego behind and become part of the tribe.
                     </p>

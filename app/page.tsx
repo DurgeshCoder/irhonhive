@@ -11,6 +11,7 @@ import { Schedule } from "@/components/sections/schedule"
 import { Testimonials } from "@/components/sections/testimonials"
 import { YoutubeFeed } from "@/components/sections/youtube-feed"
 import { BlogPreview } from "@/components/sections/blog-preview"
+import { FAQ } from "@/components/sections/faq"
 import { Contact } from "@/components/sections/contact"
 
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
       <Testimonials />
       <YoutubeFeed />
       <BlogPreview />
+      <FAQ />
       <Contact />
     </div>
   )

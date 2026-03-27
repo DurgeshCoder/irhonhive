@@ -8,39 +8,39 @@ import { FadeIn } from "@/components/ui/fade-in"
 const programs = [
     {
         title: "Strength Training",
-        description: "Build raw power and muscle mass with our scientifically designed lifting protocols.",
+        description: "The best strength training in Gomti Nagar. Build raw power with our scientifically designed lifting protocols and professional-grade equipment.",
         icon: Dumbbell,
         benefits: ["Linear Progression", "Compound Movements", "Hypertrophy Focus"],
     },
     {
-        title: "Fat Loss Transformation",
-        description: "High-intensity metabolic conditioning to burn fat and reveal your athletic physique.",
+        title: "Weight Loss Program",
+        description: "Effective weight loss programs in Lucknow. High-intensity metabolic conditioning to burn fat and reveal your athletic physique fast.",
         icon: Flame,
         benefits: ["HIIT Circuits", "Nutritional Guidance", "Metabolic Boost"],
     },
     {
-        title: "Cross-Training",
-        description: "Total body conditioning combining strength, cardio, and functional movement.",
-        icon: Activity,
-        benefits: ["Functional Fitness", "Endurance Building", "Varied Workouts"],
-    },
-    {
         title: "Personal Training",
-        description: "One-on-one coaching tailored specifically to your goals and limitations.",
+        description: "Certified personal trainers in Gomti Nagar. One-on-one coaching tailored specifically to your goals and limitations for maximum results.",
         icon: Users,
         benefits: ["Custom Plans", "Form Correction", "Accountability"],
     },
     {
-        title: "Athlete Conditioning",
-        description: "Sport-specific training to enhance performance, speed, and agility.",
-        icon: Trophy,
-        benefits: ["Explosive Power", "Agility Drills", "Injury Prevention"],
+        title: "Zumba & Yoga",
+        description: "Premium Zumba and Yoga classes in Lucknow. Improve flexibility and cardiovascular health in a fun, high-energy environment.",
+        icon: Activity,
+        benefits: ["Expert Instructors", "Flexibility Focus", "Stress Relief"],
     },
     {
-        title: "Women-Focused",
-        description: "Empowering programs designed for female physiology and fitness goals.",
+        title: "Diet & Nutrition",
+        description: "Customized diet and nutrition plans in Gomti Nagar. Precision fueling strategies designed to complement your training and speed up results.",
+        icon: Trophy,
+        benefits: ["Custom Meal Plans", "Macro Tracking", "Sustainable Habits"],
+    },
+    {
+        title: "Athlete Conditioning",
+        description: "Top-tier athlete conditioning in Lucknow. Sport-specific training to enhance power, speed, and agility for competitive levels.",
         icon: Heart,
-        benefits: ["Glute Focus", "Toning & Shaping", "Supportive Community"],
+        benefits: ["Explosive Power", "Agility Drills", "Injury Prevention"],
     },
 ]
 

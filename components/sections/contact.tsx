@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { MapPin, Phone, Mail, Instagram, Facebook, Youtube } from "lucide-react"
 
 export function Contact() {
-    const whatsappUrl = "https://wa.me/917007552746?text=Hi%20Ironhive,%20I'm%20interested%20in%20joining!"
+    const whatsappUrl = "https://wa.me/918127171111?text=Hi%20Ironhive,%20I'm%20interested%20in%20joining!"
 
     return (
         <section id="contact" className="py-24 bg-card relative">
@@ -19,7 +19,7 @@ export function Contact() {
                                 Start Your <span className="text-primary">Journey</span>
                             </h3>
                             <p className="text-muted-foreground text-lg">
-                                Ready to transform? Visit us, call us, or drop a message. The Hive awaits.
+                                Ready to transform? Visit the <span className="text-primary font-bold">top-rated gym in Gomti Nagar Lucknow</span>. We are located near major landmarks to ensure easy access for residents of Gomti Nagar and surrounding areas.
                             </p>
                         </div>
 
@@ -30,7 +30,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold uppercase">Location</h4>
-                                    <p className="text-gray-400">1/21, Vastu Khand, Gomti Nagar, <br /> Lucknow, Uttar Pradesh 226010</p>
+                                    <p className="text-gray-400">1/21, Vastu Khand, Gomti Nagar, <br /> Lucknow, UP 226010 <br /> (Near Mithai Wala Chauraha)</p>
                                 </div>
                             </div>
 
@@ -40,7 +40,7 @@ export function Contact() {
                                 </div>
                                 <div>
                                     <h4 className="text-white font-bold uppercase">Phone</h4>
-                                    <p className="text-gray-400">+91-7007552746<br />+91-8127171111</p>
+                                    <p className="text-gray-400">+91-8127171111<br />+91-7007552746</p>
                                 </div>
                             </div>
 

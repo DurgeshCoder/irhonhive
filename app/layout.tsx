@@ -16,13 +16,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ironhive Fitness | Forged, Not Born",
-  description: "Join Ironhive Fitness, the premier futuristic fitness hive. Strength training, expert coaching, and a powerful community dedicated to your transformation.",
-  keywords: ["gym near me", "fitness center", "personal trainer", "body transformation gym", "strength training", "Ironhive"],
-  metadataBase: new URL('https://ironhive.fitness'), // Placeholder
+  title: "Best Gym in Gomti Nagar Lucknow | Ironhive Fitness Center Near Me",
+  description: "Looking for the best gym in Gomti Nagar Lucknow? Ironhive Fitness offers top-tier strength training, expert personal trainers, and affordable membership. Book your free trial today at the premier fitness center near you.",
+  keywords: [
+    "best gym in Gomti Nagar Lucknow", 
+    "gym near me Gomti Nagar", 
+    "best gym in Lucknow", 
+    "fitness center in Gomti Nagar Lucknow", 
+    "top gym in Lucknow", 
+    "Ironhive Fitness Lucknow",
+    "personal trainer Gomti Nagar",
+    "Zumba classes in Gomti Nagar",
+    "weight loss program Lucknow"
+  ],
+  metadataBase: new URL('https://ironhive.fitness'),
   openGraph: {
-    title: "Ironhive Fitness",
-    description: "Welcome to the Hive of Strength. Forged, not born.",
+    title: "Ironhive Fitness | Best Gym in Gomti Nagar Lucknow",
+    description: "Transform your body at the best fitness center in Gomti Nagar. Expert trainers, modern equipment, and a powerful community in Lucknow.",
     images: ['/og-image.jpg'],
   },
 };

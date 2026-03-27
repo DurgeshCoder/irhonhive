@@ -5,24 +5,24 @@ import { FadeIn } from "@/components/ui/fade-in"
 
 const features = [
     {
-        title: "State-of-the-Art Equipment",
-        description: "Train with the best. Our facility is stocked with premium Hammer Strength and Rogue equipment.",
+        title: "Advance Weight Training",
+        description: "Master your form with professional-grade equipment and expert guidance.",
         icon: Zap,
     },
     {
-        title: "Iron Community",
-        description: "Join a tribe of like-minded individuals who push each other to be better every single day.",
+        title: "CrossFit & Cardio",
+        description: "High-intensity functional training to boost your metabolic rate and endurance.",
         icon: Users,
     },
     {
-        title: "24/7 Access",
-        description: "Train on your terms. Our facility is open round the clock for members.",
-        icon: Clock,
+        title: "Personal Coaching",
+        description: "Dedicated 1-on-1 attention to fast-track your fitness transformation.",
+        icon: ShieldCheck,
     },
     {
-        title: "Expert Guidance",
-        description: "Our certified coaches form the backbone of your success, providing knowledgeable support.",
-        icon: ShieldCheck,
+        title: "Diet & Nutrition",
+        description: "Tailored meal plans and expert counseling to fuel your body correctly.",
+        icon: Zap,
     },
 ]
 
