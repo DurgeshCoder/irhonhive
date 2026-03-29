@@ -7,7 +7,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from "@/components/ui/sheet"
 import { ThemeToggle } from "@/components/theme-toggle"
-
+import logo from "@/assets/images/ironhive_logo.png"
+import Image from "next/image"
 const navItems = [
     { name: "About", href: "#about" },
     { name: "Gallery", href: "#gallery" },
@@ -39,10 +40,8 @@ export function Navbar() {
             <div className="container mx-auto px-4 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 group">
                     <div className="relative">
-                        <Hexagon className="w-8 h-8 text-primary fill-primary/20 group-hover:fill-primary transition-colors" strokeWidth={1.5} />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-1.5 h-4 bg-foreground/80 rotate-12" />
-                        </div>
+                        <img src={logo.src} alt="Ironhive Logo" className="w-8 h-8 rounded-full" />
+
                     </div>
                     <span className="text-xl font-bold tracking-tighter uppercase leading-tight text-foreground">Ironhive<br className="sm:hidden" /><span className="text-primary ml-1">Fitness Gym</span></span>
                 </Link>
