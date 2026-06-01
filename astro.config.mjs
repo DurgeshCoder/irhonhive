@@ -1,9 +1,12 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ironhive.fitness',
+
   integrations: [
     sitemap({
       customPages: [
@@ -20,12 +23,16 @@ export default defineConfig({
       lastmod: new Date(),
     }),
   ],
+
   image: {
     remotePatterns: [{ protocol: 'https' }],
   },
+
   vite: {
     build: {
       cssMinify: true,
     },
   },
+
+  adapter: cloudflare(),
 });
