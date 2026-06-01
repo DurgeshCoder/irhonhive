@@ -1,3 +1,7 @@
+name = "irhonhive"
+pages_build_output_dir = "dist"
+compatibility_date = "2024-04-03"
+
 [[kv_namespaces]]
 binding = "SESSION"
 id = "6d7454f9305f41418ab4eb16661b273d"
