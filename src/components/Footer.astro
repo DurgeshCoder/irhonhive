@@ -1,0 +1,535 @@
+---
+// Footer.astro — Ironhive Fitness Gym
+const quickLinks = [
+  { label: "About Us",    href: "#about" },
+  { label: "Programs",    href: "#programs" },
+  { label: "Membership",  href: "#membership" },
+  { label: "Trainers",    href: "#trainers" },
+  { label: "Blog",        href: "/blog/" },
+  { label: "Contact",     href: "#contact" },
+];
+
+const services = [
+  "Strength Training",
+  "Weight Loss",
+  "Personal Training",
+  "Zumba & Yoga",
+  "Diet & Nutrition",
+  "Athlete Conditioning",
+];
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer" id="footer" aria-label="Site footer">
+  <!-- ── Top grid ─────────────────────────────────── -->
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1 — Brand & Socials -->
+        <div class="footer-col footer-col-brand">
+          <a href="/" class="footer-logo" aria-label="Ironhive Fitness — Home">
+            <img
+              src="/images/ironhive_logo.png"
+              alt="Ironhive Fitness Logo"
+              class="footer-logo-img"
+              width="48"
+              height="48"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="footer-logo-name">
+              Iron<span>hive</span><br />Fitness Gym
+            </span>
+          </a>
+          <p class="footer-tagline">
+            Forge your best self. Every rep. Every day.
+            Lucknow's premium strength &amp; conditioning hub — est. 2024.
+          </p>
+
+          <!-- Social Icons -->
+          <div class="footer-socials" aria-label="Social media links">
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/ironhivefitnessgym_/"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Ironhive on Instagram"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+
+            <!-- YouTube -->
+            <a
+              href="https://www.youtube.com/@TheMuscleGameSK/shorts"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Watch Ironhive on YouTube"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29.93 29.93 0 001 12a29.93 29.93 0 00.46 5.58A2.78 2.78 0 003.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29.93 29.93 0 0023 12a29.93 29.93 0 00-.46-5.58z"/>
+                <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+
+            <!-- WhatsApp -->
+            <a
+              href="https://wa.me/918127171111"
+              class="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Message Ironhive on WhatsApp"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2 — Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Quick Links</h3>
+          <ul class="footer-link-list" role="list">
+            {quickLinks.map((link) => (
+              <li>
+                <a href={link.href} class="footer-link">
+                  <span class="footer-link-arrow" aria-hidden="true">›</span>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Col 3 — Services -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Services</h3>
+          <ul class="footer-link-list" role="list">
+            {services.map((service) => (
+              <li>
+                <span class="footer-service-item">
+                  <span class="footer-link-arrow" aria-hidden="true">›</span>
+                  {service}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Col 4 — Hours & Contact -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Operating Hours</h3>
+
+          <div class="footer-hours-card">
+            <div class="footer-hours-row">
+              <span class="footer-hours-label">Morning</span>
+              <span class="footer-hours-time">5:30 AM – 11:30 AM</span>
+            </div>
+            <div class="footer-hours-divider" aria-hidden="true"></div>
+            <div class="footer-hours-row">
+              <span class="footer-hours-label">Evening</span>
+              <span class="footer-hours-time">4:00 PM – 10:00 PM</span>
+            </div>
+            <div class="footer-hours-divider" aria-hidden="true"></div>
+            <div class="footer-hours-row">
+              <span class="footer-hours-label">Schedule</span>
+              <span class="footer-hours-time footer-hours-open">Open 7 Days</span>
+            </div>
+          </div>
+
+          <div class="footer-contact-block">
+            <a
+              href="tel:+918127171111"
+              class="footer-contact-link"
+              aria-label="Call Ironhive Fitness"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
+              </svg>
+              +91-8127171111
+            </a>
+            <a
+              href="tel:+917007552746"
+              class="footer-contact-link"
+              aria-label="Call Ironhive Fitness alternate number"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/>
+              </svg>
+              +91-7007552746
+            </a>
+            <a
+              href="mailto:ironhivefitnessgym@gmail.com"
+              class="footer-contact-link"
+              aria-label="Email Ironhive Fitness"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              ironhivefitnessgym@gmail.com
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Bottom bar ────────────────────────────────── -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+
+        <!-- NAP -->
+        <address class="footer-nap" aria-label="Ironhive Fitness address and contact">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          1/21, Vastu Khand, Gomti Nagar, Lucknow, UP 226010 &nbsp;·&nbsp; Near SPNA Sweets &nbsp;·&nbsp; +91-8127171111
+        </address>
+
+        <!-- Copyright -->
+        <p class="footer-copy">
+          &copy; {currentYear} Ironhive Fitness Gym. All rights reserved.
+        </p>
+
+        <!-- Credit -->
+        <p class="footer-credit">
+          Built with ❤️ by&nbsp;
+          <a
+            href="https://substring.in"
+            class="footer-credit-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Website built by Substring"
+          >Substring</a>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─────────────────────────────────────────────── -->
+<style>
+  /* ── Footer shell ─────────────────────────────── */
+  .footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    margin-top: 0;
+  }
+
+  /* ── Top section ─────────────────────────────── */
+  .footer-top {
+    padding: clamp(48px, 8vw, 96px) 0 clamp(40px, 6vw, 72px);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(36px, 5vw, 56px);
+  }
+
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+      gap: 48px;
+    }
+  }
+
+  /* ── Column ──────────────────────────────────── */
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-col-brand {
+    gap: 16px;
+  }
+
+  /* ── Logo ────────────────────────────────────── */
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    width: fit-content;
+  }
+  .footer-logo-img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-brand);
+    flex-shrink: 0;
+  }
+  .footer-logo-name {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    line-height: 1.1;
+  }
+  .footer-logo-name span {
+    color: var(--color-brand);
+  }
+
+  /* ── Tagline ─────────────────────────────────── */
+  .footer-tagline {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--color-muted);
+    max-width: 300px;
+    margin: 0;
+  }
+
+  /* ── Social Icons ────────────────────────────── */
+  .footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+  }
+  .social-link:hover {
+    background: var(--color-brand);
+    border-color: var(--color-brand);
+    color: #0d0d0d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 180, 0, 0.3);
+  }
+
+  /* ── Headings ────────────────────────────────── */
+  .footer-heading {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    margin: 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* ── Link lists ──────────────────────────────── */
+  .footer-link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .footer-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .footer-link:hover {
+    color: var(--color-brand);
+    padding-left: 4px;
+  }
+  .footer-link-arrow {
+    color: var(--color-brand);
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  .footer-link:hover .footer-link-arrow {
+    transform: translateX(2px);
+  }
+  .footer-service-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--color-muted);
+  }
+
+  /* ── Hours card ──────────────────────────────── */
+  .footer-hours-card {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-hours-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .footer-hours-time {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--color-muted);
+    text-align: right;
+  }
+  .footer-hours-open {
+    color: #4ade80;
+    font-weight: 700;
+  }
+  .footer-hours-divider {
+    height: 1px;
+    background: var(--color-border);
+  }
+
+  /* ── Contact block ───────────────────────────── */
+  .footer-contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-contact-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    line-height: 1;
+    word-break: break-all;
+  }
+  .footer-contact-link svg {
+    flex-shrink: 0;
+    color: var(--color-brand);
+  }
+  .footer-contact-link:hover {
+    color: var(--color-brand);
+  }
+
+  /* ── Bottom bar ──────────────────────────────── */
+  .footer-bottom {
+    border-top: 1px solid var(--color-border);
+    padding: 20px 0;
+    background: var(--color-bg);
+  }
+  .footer-bottom-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .footer-bottom-inner {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      gap: 16px;
+    }
+  }
+
+  /* NAP */
+  .footer-nap {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    font-style: normal;
+    line-height: 1.5;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-nap svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-brand);
+  }
+
+  @media (min-width: 1024px) {
+    .footer-nap {
+      justify-content: flex-start;
+      flex: 1;
+    }
+  }
+
+  /* Copyright */
+  .footer-copy {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  /* Credit */
+  .footer-credit {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--color-muted);
+    letter-spacing: 0.05em;
+    margin: 0;
+    white-space: nowrap;
+  }
+  .footer-credit-link {
+    color: var(--color-brand);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+  .footer-credit-link:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+  }
+</style>

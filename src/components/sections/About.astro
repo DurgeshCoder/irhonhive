@@ -1,0 +1,308 @@
+---
+// About.astro — Ironhive Fitness Gym
+---
+
+<section class="about-section section" id="about" aria-label="About Ironhive Fitness Gym">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- ── Left: image ──────────────────────────────────────── -->
+      <div class="about-img-wrap reveal">
+        <div class="about-img-inner">
+          <div class="about-img-overlay" aria-hidden="true"></div>
+          <img
+            src="/images/ironhive_fitness.png"
+            alt="Inside Ironhive Fitness Gym, Gomti Nagar, Lucknow"
+            loading="lazy"
+            decoding="async"
+            width="600"
+            height="750"
+          />
+          <div class="about-img-caption" aria-label="The Hive HQ">
+            The <span>Hive</span> HQ
+          </div>
+        </div>
+        <!-- Brand corner decoration (desktop only) -->
+        <div class="about-corner-deco" aria-hidden="true"></div>
+      </div>
+
+      <!-- ── Right: text ──────────────────────────────────────── -->
+      <div class="about-text">
+
+        <!-- Label -->
+        <p class="about-label reveal">Who We Are</p>
+
+        <!-- Headline -->
+        <h2 class="about-h2 reveal reveal-delay-1">
+          More Than A&nbsp;Gym.<br />
+          <span class="accent">We Are A</span> Movement.
+        </h2>
+
+        <!-- Body paragraphs -->
+        <div class="about-body reveal reveal-delay-2">
+          <p>
+            Ironhive Fitness Gym wasn&apos;t built to be just another place to sweat.
+            It was forged to be a sanctuary for those who refuse to settle for average.
+          </p>
+          <p>
+            Inspired by the collective strength and industrial efficiency of the hive,
+            we believe that individual power is amplified by community. Here, steel meets soul.
+          </p>
+          <p>
+            Whether you are an elite athlete or stepping into the gym for the first time,
+            our mission is simple: to help you build a body and mind capable of conquering
+            any challenge.
+          </p>
+        </div>
+
+        <!-- Mini stats -->
+        <div class="about-stats reveal reveal-delay-3">
+          <div class="about-stat">
+            <div class="about-stat-value">2024</div>
+            <div class="about-stat-label">Established</div>
+          </div>
+          <div class="about-stat-divider" aria-hidden="true"></div>
+          <div class="about-stat">
+            <div class="about-stat-value">100%</div>
+            <div class="about-stat-label">Commitment</div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="reveal reveal-delay-4">
+          <a href="#contact" class="btn btn-outline">
+            Read Our Story
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ─── Section wrapper ─────────────────────────────────────── */
+  .about-section {
+    padding: var(--section-gap, 100px) 0;
+    background: var(--color-bg);
+    overflow: hidden;
+  }
+
+  /* ─── 2-column grid ───────────────────────────────────────── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: center;
+  }
+
+  /* ─── Image column ────────────────────────────────────────── */
+  .about-img-wrap {
+    position: relative;
+  }
+
+  .about-img-inner {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    aspect-ratio: 4 / 5;
+  }
+
+  .about-img-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(60%);
+    transition: filter 0.7s ease;
+    display: block;
+  }
+
+  .about-img-wrap:hover .about-img-inner img {
+    filter: grayscale(0%);
+  }
+
+  /* Gradient overlay inside image */
+  .about-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13, 13, 13, 0.8) 0%, transparent 60%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Caption overlaid on image */
+  .about-img-caption {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    font-family: var(--font-headline);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .about-img-caption span {
+    color: var(--color-brand);
+  }
+
+  /* Brand corner decoration — desktop only */
+  .about-corner-deco {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    border-right: 3px solid var(--color-brand);
+    border-bottom: 3px solid var(--color-brand);
+    border-radius: 0 0 12px 0;
+    display: none;
+    pointer-events: none;
+  }
+
+  /* ─── Text column ─────────────────────────────────────────── */
+  .about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Label */
+  .about-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* H2 */
+  .about-h2 {
+    font-family: var(--font-headline);
+    font-weight: 900;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+    color: var(--color-text);
+    margin: 0;
+  }
+
+  .about-h2 .accent {
+    color: var(--color-brand);
+  }
+
+  /* Body */
+  .about-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .about-body p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--color-muted);
+    margin: 0;
+  }
+
+  /* Mini stats bar */
+  .about-stats {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 24px 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .about-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--color-border);
+    flex-shrink: 0;
+  }
+
+  .about-stat-value {
+    font-family: var(--font-headline);
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--color-text);
+    line-height: 1;
+  }
+
+  .about-stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-top: 4px;
+    font-weight: 700;
+  }
+
+  /* ─── Reveal animation ────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ─── Responsive: desktop — show corner deco ──────────────── */
+  @media (min-width: 768px) {
+    .about-corner-deco {
+      display: block;
+    }
+  }
+
+  /* ─── Responsive: mobile ──────────────────────────────────── */
+  @media (max-width: 767px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-img-inner {
+      aspect-ratio: 4 / 3;
+    }
+
+    .about-corner-deco {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Reveal animation observer for About section
+  const revealEls = document.querySelectorAll('.about-section .reveal');
+  if (revealEls.length > 0) {
+    const aboutObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            aboutObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+    revealEls.forEach(el => aboutObserver.observe(el));
+  }
+</script>

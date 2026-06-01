@@ -1,0 +1,171 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  noIndex?: boolean;
+  schema?: object | object[];
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = '/og-image.jpg',
+  ogType = 'website',
+  noIndex = false,
+  schema,
+} = Astro.props;
+
+const siteUrl = 'https://ironhive.fitness';
+const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "GymOrSportsActivityLocation", "HealthClub"],
+  "@id": `${siteUrl}/#organization`,
+  "name": "Ironhive Fitness Gym",
+  "alternateName": "Ironhive Fitness",
+  "url": siteUrl,
+  "logo": `${siteUrl}/images/ironhive_logo.png`,
+  "image": `${siteUrl}/images/ironhive_fitness1.jpg`,
+  "description": "The best gym in Gomti Nagar, Lucknow. Expert personal trainers, world-class equipment, and a transformative fitness community.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1/21, Vastu Khand",
+    "addressLocality": "Gomti Nagar",
+    "addressRegion": "Lucknow",
+    "postalCode": "226010",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 26.8703325,
+    "longitude": 81.0258346
+  },
+  "telephone": ["+918127171111", "+917007552746"],
+  "email": "ironhivefitnessgym@gmail.com",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "05:30",
+      "closes": "11:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "16:00",
+      "closes": "22:00"
+    }
+  ],
+  "priceRange": "₹₹",
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Cash, UPI, Card",
+  "sameAs": [
+    "https://www.instagram.com/ironhivefitnessgym_/",
+    "https://www.youtube.com/@TheMuscleGameSK"
+  ],
+  "hasMap": "https://maps.google.com/?cid=12917843174985163204",
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Weight Training Equipment", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Personal Training", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Locker Room", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Zumba Classes", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Yoga Classes", "value": true }
+  ],
+  "foundingDate": "2024",
+  "numberOfEmployees": { "@type": "QuantitativeValue", "value": 15 },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "120",
+    "bestRating": "5"
+  }
+};
+
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${siteUrl}/#org`,
+  "name": "Ironhive Fitness Gym",
+  "url": siteUrl,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${siteUrl}/images/ironhive_logo.png`,
+    "width": 200,
+    "height": 200
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+918127171111",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Hindi"]
+  }
+};
+
+const allSchemas = [
+  localBusinessSchema,
+  orgSchema,
+  ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])
+];
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta name="keywords" content="best gym in Gomti Nagar Lucknow, gym near me Gomti Nagar, fitness center Lucknow, personal trainer Gomti Nagar, weight loss gym Lucknow, Ironhive Fitness Gym" />
+<meta name="author" content="Ironhive Fitness Gym" />
+<meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
+<meta name="geo.region" content="IN-UP" />
+<meta name="geo.placename" content="Gomti Nagar, Lucknow" />
+<meta name="geo.position" content="26.8703325;81.0258346" />
+<meta name="ICBM" content="26.8703325, 81.0258346" />
+
+<link rel="canonical" href={canonical} />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Open Graph -->
+<meta property="og:type" content={ogType} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullOgImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content={canonical} />
+<meta property="og:site_name" content="Ironhive Fitness Gym" />
+<meta property="og:locale" content="en_IN" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullOgImage} />
+
+<!-- Fonts (using system default) -->
+
+<!-- JSON-LD Structured Data -->
+{allSchemas.map(s => (
+  <script type="application/ld+json" set:html={JSON.stringify(s, null, 2)} />
+))}
+
+<!-- Theme Initialization -->
+<script is:inline>
+  (function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else if (savedTheme === 'dark') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+  })();
+</script>

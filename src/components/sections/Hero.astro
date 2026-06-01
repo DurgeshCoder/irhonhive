@@ -1,0 +1,411 @@
+---
+// Hero.astro — Ironhive Fitness Gym
+---
+
+<section class="hero" id="hero">
+  <!-- Background image -->
+  <div
+    class="hero-bg"
+    style="background-image: url('/images/hero_ironhive_fitness.jpg')"
+    role="img"
+    aria-label="Ironhive Fitness Gym interior"
+  ></div>
+
+  <!-- Dark gradient overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Glow orbs -->
+  <div
+    class="glow-orb"
+    style="width:600px;height:600px;top:-100px;right:-200px;opacity:0.15;"
+    aria-hidden="true"
+  ></div>
+  <div
+    class="glow-orb"
+    style="width:500px;height:500px;bottom:-150px;left:-150px;opacity:0.1;"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Main content -->
+  <div class="hero-content">
+    <!-- Top badge -->
+    <div class="hero-badge" aria-label="Best Gym in Gomti Nagar Lucknow — Free Trial Available">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span class="label-text text-brand">Best Gym in Gomti Nagar Lucknow</span>
+      <span class="badge-separator" aria-hidden="true"></span>
+      <span class="label-text" style="color: rgba(240,240,240,0.6);">Free Trial Available</span>
+    </div>
+
+    <!-- H1 headline -->
+    <h1 class="hero-h1">
+      <span class="gradient-text">TRANSFORM</span><br />
+      <span style="color: #F0F0F0;">YOUR LIFE</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="hero-sub">
+      Reach your fitness goals at the top-rated fitness center in Lucknow.
+      Located in the heart of Gomti Nagar, we provide world-class equipment
+      and certified personal trainers near you.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="hero-cta">
+      <a
+        href="https://wa.me/918127171111?text=Hi%20Ironhive,%20I%20want%20to%20Join!"
+        class="btn btn-primary btn-lg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Join The Hive &rarr;
+      </a>
+      <a
+        href="https://wa.me/918127171111?text=Hi%20Ironhive,%20I%27d%20like%20to%20book%20a%20free%20trial."
+        class="btn btn-outline btn-lg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book Free Trial
+      </a>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="stats-strip reveal">
+      <div class="stat-item">
+        <div class="stat-number" data-count="2500" data-suffix="+">0</div>
+        <div class="stat-label">Members Trained</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="500" data-suffix="+">0</div>
+        <div class="stat-label">Transformations</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="15" data-suffix="+">0</div>
+        <div class="stat-label">Expert Coaches</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number" data-count="10" data-suffix="+">0</div>
+        <div class="stat-label">Years Strong</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator" aria-hidden="true">
+    <span class="scroll-text">Scroll</span>
+    <div class="scroll-mouse">
+      <div class="scroll-dot"></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ─── Hero wrapper ─────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  /* ─── Background image ────────────────────────────────────── */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* ─── Gradient overlay ────────────────────────────────────── */
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(13, 13, 13, 0.7) 0%,
+      rgba(13, 13, 13, 0.5) 40%,
+      rgba(13, 13, 13, 0.85) 100%
+    );
+  }
+
+  /* ─── Glow orbs ───────────────────────────────────────────── */
+  .glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--color-brand) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ─── Content wrapper ─────────────────────────────────────── */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    animation: fadeInUp 0.8s ease both;
+  }
+
+  /* ─── Badge ───────────────────────────────────────────────── */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    background: rgba(13, 13, 13, 0.6);
+    border: 1px solid rgba(232, 180, 0, 0.25);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    margin-bottom: 32px;
+    animation: fadeIn 0.6s ease 0.2s both;
+  }
+
+  .pulse-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-brand);
+    flex-shrink: 0;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+
+  .badge-separator {
+    width: 1px;
+    height: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+  }
+
+  /* ─── H1 ──────────────────────────────────────────────────── */
+  .hero-h1 {
+    font-family: var(--font-headline);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    font-size: clamp(4rem, 12vw, 10rem);
+    animation: fadeInUp 0.8s ease 0.3s both;
+  }
+
+  /* ─── Subheadline ─────────────────────────────────────────── */
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: rgba(240, 240, 240, 0.8);
+    max-width: 680px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    animation: fadeInUp 0.8s ease 0.4s both;
+  }
+
+  /* ─── CTA row ─────────────────────────────────────────────── */
+  .hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    animation: fadeInUp 0.8s ease 0.5s both;
+  }
+
+  /* ─── Stats strip ─────────────────────────────────────────── */
+  .stats-strip {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 60px;
+    max-width: 800px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(22, 22, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .stat-item {
+    padding: 28px 20px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .stat-item:last-child {
+    border-right: none;
+  }
+
+  .stat-number {
+    font-family: var(--font-headline);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    color: var(--color-brand);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(240, 240, 240, 0.5);
+    margin-top: 6px;
+    font-weight: 700;
+  }
+
+  /* ─── Scroll indicator ────────────────────────────────────── */
+  .scroll-indicator {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 1s ease 1.5s both;
+  }
+
+  .scroll-text {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(240, 240, 240, 0.35);
+  }
+
+  .scroll-mouse {
+    width: 22px;
+    height: 36px;
+    border: 2px solid rgba(240, 240, 240, 0.2);
+    border-radius: 11px;
+    display: flex;
+    justify-content: center;
+    padding-top: 6px;
+  }
+
+  .scroll-dot {
+    width: 4px;
+    height: 8px;
+    background: var(--color-brand);
+    border-radius: 2px;
+    animation: float 1.5s ease-in-out infinite;
+  }
+
+  /* ─── Gradient text shimmer ───────────────────────────────── */
+  .gradient-text {
+    background: linear-gradient(
+      90deg,
+      var(--color-brand) 0%,
+      #fff8dc 40%,
+      var(--color-brand) 80%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* ─── Keyframes ───────────────────────────────────────────── */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(8px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(232, 180, 0, 0.6);
+      opacity: 1;
+    }
+    50% {
+      box-shadow: 0 0 0 6px rgba(232, 180, 0, 0);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes shimmer {
+    from { background-position: 0% center; }
+    to   { background-position: 200% center; }
+  }
+
+  /* ─── Responsive ──────────────────────────────────────────── */
+  @media (max-width: 767px) {
+    .stats-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item {
+      border-right: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .stat-item:nth-child(2n) {
+      border-right: none;
+    }
+
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-cta .btn {
+      min-width: 200px;
+    }
+  }
+</style>
+
+<script>
+  // Count-up animation triggered by IntersectionObserver
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-count]').forEach(el => {
+          const target = parseInt((el as HTMLElement).dataset.count || '0', 10);
+          const suffix = (el as HTMLElement).dataset.suffix || '+';
+          let current = 0;
+          const step = Math.ceil(target / 60);
+          const timer = setInterval(() => {
+            current = Math.min(current + step, target);
+            el.textContent = current.toLocaleString() + suffix;
+            if (current >= target) clearInterval(timer);
+          }, 25);
+        });
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const strip = document.querySelector('.stats-strip');
+  if (strip) observer.observe(strip);
+</script>

@@ -1,0 +1,250 @@
+---
+const faqs = [
+  {
+    id: 'faq-1',
+    question: 'Which is the best gym in Gomti Nagar Lucknow?',
+    answer:
+      'Ironhive Fitness Gym is widely considered the best gym in Gomti Nagar, Lucknow, offering state-of-the-art strength training equipment, certified personal trainers, and a motivating environment designed for real transformations.',
+  },
+  {
+    id: 'faq-2',
+    question: 'What is the fee of gym in Lucknow?',
+    answer:
+      'Gym fees in Lucknow vary, but at Ironhive Fitness Gym Gomti Nagar, we offer affordable membership plans starting from ₹1500 per month, with special discounts for quarterly and half-yearly commitments. A one-time registration fee of ₹300 applies.',
+  },
+  {
+    id: 'faq-3',
+    question: 'Is there any gym near me in Gomti Nagar?',
+    answer:
+      'Yes, Ironhive Fitness Gym is conveniently located at 1/21, Vastu Khand, Gomti Nagar, Lucknow. It is easily accessible near SPNA Sweets, Patrakarpuram, and surrounding areas.',
+  },
+  {
+    id: 'faq-4',
+    question: 'Do you offer personal training in Gomti Nagar?',
+    answer:
+      'Absolutely! We provide expert personal training in Gomti Nagar with certified coaches who specialize in weight loss, muscle gain, and overall athletic performance.',
+  },
+  {
+    id: 'faq-5',
+    question: 'What are the timings of Ironhive Fitness Gym Lucknow?',
+    answer:
+      'We offer flexible timings for working professionals: Morning 5:30 AM to 11:30 AM and Evening 4:00 PM to 10:00 PM, 7 days a week.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<section class="faq-section section" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <!-- Section header -->
+    <div class="section-header" style="text-align:center; margin-bottom: clamp(40px, 5vw, 64px);">
+      <span class="section-label">Got Questions?</span>
+      <h2 class="section-title" id="faq-heading">
+        Common <span class="text-brand">Inquiries</span>
+      </h2>
+      <p class="section-desc">
+        Everything you need to know about the best fitness center in Gomti Nagar.
+      </p>
+    </div>
+
+    <!-- Accordion list -->
+    <div class="faq-list" role="list">
+      {faqs.map((faq, index) => (
+        <div
+          class="accordion-item"
+          role="listitem"
+          id={`accordion-item-${faq.id}`}
+        >
+          <button
+            class="accordion-trigger"
+            id={`accordion-trigger-${faq.id}`}
+            aria-expanded="false"
+            aria-controls={`accordion-content-${faq.id}`}
+            type="button"
+          >
+            <span class="accordion-index" aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <span class="accordion-trigger-text">{faq.question}</span>
+            <span class="accordion-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </button>
+          <div
+            class="accordion-content"
+            id={`accordion-content-${faq.id}`}
+            role="region"
+            aria-labelledby={`accordion-trigger-${faq.id}`}
+            hidden
+          >
+            <div class="accordion-body">
+              <p>{faq.answer}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FAQPage JSON-LD Schema -->
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+<style>
+  .faq-section {
+    padding: var(--section-gap) 0;
+    background: var(--color-surface);
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .accordion-index {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-brand);
+    flex-shrink: 0;
+    min-width: 28px;
+  }
+
+  .accordion-trigger-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  .accordion-icon {
+    flex-shrink: 0;
+    color: var(--color-muted);
+    transition: transform 0.3s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .accordion-item.open .accordion-icon {
+    transform: rotate(180deg);
+    color: var(--color-brand);
+  }
+
+  /* Override / extend global accordion styles for this section */
+  .accordion-item {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md, 12px);
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .accordion-item:hover,
+  .accordion-item.open {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 1px rgba(232, 180, 0, 0.15);
+  }
+
+  .accordion-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: clamp(18px, 3vw, 24px) clamp(20px, 3vw, 28px);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-headline);
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+    text-align: left;
+    transition: color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .accordion-trigger:hover {
+    color: var(--color-brand);
+  }
+
+  .accordion-item.open .accordion-trigger {
+    color: var(--color-brand);
+  }
+
+  .accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease;
+  }
+
+  .accordion-content:not([hidden]) {
+    max-height: 600px;
+  }
+
+  /* When [hidden] is removed we show it */
+  .accordion-item.open .accordion-content {
+    max-height: 600px;
+  }
+
+  .accordion-body {
+    padding: 0 clamp(20px, 3vw, 28px) clamp(18px, 3vw, 24px);
+    padding-left: calc(clamp(20px, 3vw, 28px) + 28px + 16px);
+  }
+
+  .accordion-body p {
+    font-size: 0.93rem;
+    line-height: 1.8;
+    color: var(--color-muted);
+    margin: 0;
+  }
+</style>
+
+<script>
+  const accordions = document.querySelectorAll<HTMLElement>('.accordion-item');
+
+  accordions.forEach((item) => {
+    const trigger = item.querySelector<HTMLButtonElement>('.accordion-trigger');
+    const content = item.querySelector<HTMLElement>('.accordion-content');
+
+    if (!trigger || !content) return;
+
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+
+      // Close all
+      accordions.forEach((a) => {
+        a.classList.remove('open');
+        const t = a.querySelector<HTMLButtonElement>('.accordion-trigger');
+        const c = a.querySelector<HTMLElement>('.accordion-content');
+        if (t) t.setAttribute('aria-expanded', 'false');
+        if (c) c.setAttribute('hidden', '');
+      });
+
+      // Open clicked (unless it was already open)
+      if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+        content.removeAttribute('hidden');
+      }
+    });
+  });
+</script>

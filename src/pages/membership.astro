@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Membership from '../components/sections/Membership.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import Contact from '../components/sections/Contact.astro';
+
+const breadcrumbs = [
+  { name: 'Membership', url: 'https://ironhive.fitness/membership/' }
+];
+---
+
+<BaseLayout
+  title="Gym Membership Plans Lucknow | Join Ironhive Fitness Gomti Nagar"
+  description="Choose from Monthly (₹1500), Quarterly (₹4000), or Half Yearly (₹7000) gym membership plans at Ironhive Fitness, Gomti Nagar, Lucknow. Free trial available. Book via WhatsApp."
+  canonical="https://ironhive.fitness/membership/"
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Page Hero -->
+  <section class="membership-page-hero">
+    <div class="container">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Membership Plans</span>
+      </nav>
+      <div class="membership-page-hero-inner reveal">
+        <span class="label-text text-brand">Join The Hive</span>
+        <h1 class="headline-lg">Gym Membership<br />Plans in Lucknow</h1>
+        <p class="body-lg">Affordable fitness membership plans at Ironhive Fitness Gym, Gomti Nagar, Lucknow. No hidden fees. Free trial available. Start your transformation today.</p>
+      </div>
+    </div>
+  </section>
+
+  <Membership />
+
+  <!-- Value Props -->
+  <section class="value-section">
+    <div class="container">
+      <div class="value-grid reveal">
+        {[
+          { icon: '🕐', title: 'Flexible Timings', desc: 'Morning 5:30 AM–11:30 AM & Evening 4:00 PM–10:00 PM. Open 7 days a week.' },
+          { icon: '🏆', title: 'Certified Trainers', desc: 'Train under Sunil Kumar (Head Coach) and Punit Awasthi with expert guidance.' },
+          { icon: '💪', title: 'Free Trial', desc: 'Not sure yet? Book a free trial session and experience the Hive difference.' },
+          { icon: '📍', title: 'Prime Location', desc: 'Located at Vastu Khand, Gomti Nagar — near SPNA Sweets, easily accessible.' },
+        ].map(v => (
+          <div class="value-card">
+            <div class="value-icon">{v.icon}</div>
+            <h3 class="value-title">{v.title}</h3>
+            <p class="value-desc">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQ />
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <div class="final-cta-inner reveal">
+        <h2 class="headline-md">Ready To Start?</h2>
+        <p class="body-base">Join 2500+ members at Ironhive Fitness Gym, Gomti Nagar. Your transformation begins today.</p>
+        <div class="final-cta-btns">
+          <a
+            href="https://wa.me/918127171111?text=Hi%20Ironhive,%20I%27d%20like%20to%20book%20a%20free%20trial."
+            class="btn btn-primary btn-lg"
+            target="_blank" rel="noopener noreferrer"
+          >
+            Book Free Trial
+          </a>
+          <a href="/contact/" class="btn btn-outline btn-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .membership-page-hero {
+    padding: clamp(120px, 15vw, 160px) 0 clamp(48px, 6vw, 80px);
+    background: var(--color-bg);
+    text-align: center;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 28px;
+  }
+
+  .breadcrumb a {
+    color: var(--color-brand);
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .breadcrumb a:hover { opacity: 0.8; }
+
+  .membership-page-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .value-section {
+    padding: var(--section-gap) 0;
+    background: var(--color-surface);
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+  }
+
+  .value-card {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: clamp(24px, 3vw, 36px);
+    text-align: center;
+    transition: all 0.25s ease;
+  }
+
+  .value-card:hover {
+    border-color: rgba(232, 180, 0, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .value-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+  }
+
+  .value-title {
+    font-family: var(--font-headline);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    margin-bottom: 10px;
+  }
+
+  .value-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+  }
+
+  .final-cta {
+    padding: var(--section-gap) 0;
+    background: var(--color-bg);
+  }
+
+  .final-cta-inner {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: clamp(48px, 6vw, 80px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .final-cta-inner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 100%, rgba(232, 180, 0, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .final-cta-btns {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 1023px) {
+    .value-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 599px) {
+    .value-grid { grid-template-columns: 1fr; }
+    .final-cta-btns .btn { width: 100%; }
+  }
+</style>

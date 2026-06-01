@@ -1,0 +1,378 @@
+---
+const programs = [
+  {
+    id: 'strength-training',
+    title: 'Strength Training',
+    description:
+      'The best strength training in Gomti Nagar. Build raw power with our scientifically designed lifting protocols.',
+    benefits: ['Linear Progression', 'Compound Movements', 'Hypertrophy Focus'],
+    icon: 'dumbbell',
+  },
+  {
+    id: 'weight-loss',
+    title: 'Weight Loss Program',
+    description:
+      'Effective weight loss programs in Lucknow. High-intensity metabolic conditioning to burn fat fast.',
+    benefits: ['HIIT Circuits', 'Nutritional Guidance', 'Metabolic Boost'],
+    icon: 'flame',
+  },
+  {
+    id: 'personal-training',
+    title: 'Personal Training',
+    description:
+      'Certified personal trainers in Gomti Nagar. One-on-one coaching tailored specifically to your goals.',
+    benefits: ['Custom Plans', 'Form Correction', 'Accountability'],
+    icon: 'person',
+  },
+  {
+    id: 'zumba-yoga',
+    title: 'Zumba & Yoga',
+    description:
+      'Premium Zumba and Yoga classes in Lucknow. Improve flexibility and cardiovascular health.',
+    benefits: ['Expert Instructors', 'Flexibility Focus', 'Stress Relief'],
+    icon: 'activity',
+  },
+  {
+    id: 'diet-nutrition',
+    title: 'Diet & Nutrition',
+    description:
+      'Customized diet and nutrition plans in Gomti Nagar. Precision fueling strategies designed to complement your training.',
+    benefits: ['Custom Meal Plans', 'Macro Tracking', 'Sustainable Habits'],
+    icon: 'leaf',
+  },
+  {
+    id: 'athlete-conditioning',
+    title: 'Athlete Conditioning',
+    description:
+      'Top-tier athlete conditioning in Lucknow. Sport-specific training to enhance power, speed, and agility.',
+    benefits: ['Explosive Power', 'Agility Drills', 'Injury Prevention'],
+    icon: 'trophy',
+  },
+];
+
+/* ── Inline SVG icon map ─────────────────────────────── */
+const icons: Record<string, string> = {
+  dumbbell: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M6 5v14"/>
+    <path d="M18 5v14"/>
+    <path d="M6 8H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2"/>
+    <path d="M18 8h2a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1h-2"/>
+    <line x1="6" y1="12" x2="18" y2="12"/>
+  </svg>`,
+
+  flame: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
+  </svg>`,
+
+  person: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="12" cy="7" r="4"/>
+    <path d="M20 21v-2a8 8 0 0 0-16 0v2"/>
+  </svg>`,
+
+  activity: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+  </svg>`,
+
+  leaf: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+  </svg>`,
+
+  trophy: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <line x1="12" y1="17" x2="12" y2="21"/>
+    <line x1="8" y1="21" x2="16" y2="21"/>
+    <path d="M7 4H17l-1 7a5 5 0 0 1-10 0L5 4z"/>
+    <path d="M5 9H3a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1h3"/>
+    <path d="M19 9h2a2 2 0 0 0 2-2V6a1 1 0 0 0-1-1h-3"/>
+  </svg>`,
+};
+---
+
+<section class="programs-section section" id="programs" aria-labelledby="programs-heading">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header fade-in">
+      <span class="section-label">Our Programs</span>
+      <h2 id="programs-heading" class="section-title">Choose Your <span class="text-brand">Weapon</span></h2>
+      <p class="section-body">
+        From raw strength to elite conditioning — Ironhive offers precision-engineered programs
+        for every goal. Find your path and start forging a better version of yourself.
+      </p>
+    </div>
+
+    <!-- Programs Grid -->
+    <div class="programs-grid">
+      {programs.map((prog, idx) => (
+        <article
+          class="program-card fade-in"
+          id={`program-${prog.id}`}
+          aria-label={prog.title}
+          style={`--delay: ${idx * 80}ms`}
+        >
+          <!-- Icon Box -->
+          <div class="icon-box" aria-hidden="true">
+            <Fragment set:html={icons[prog.icon]} />
+          </div>
+
+          <!-- Title -->
+          <h3 class="program-title">{prog.title}</h3>
+
+          <!-- Description -->
+          <p class="program-desc">{prog.description}</p>
+
+          <!-- Benefits Checklist -->
+          <ul class="program-benefits" aria-label={`${prog.title} benefits`}>
+            {prog.benefits.map((benefit) => (
+              <li class="program-benefit">
+                <span class="benefit-dot" aria-hidden="true"></span>
+                {benefit}
+              </li>
+            ))}
+          </ul>
+
+          <!-- CTA -->
+          <a
+            href={`/programs#${prog.id}`}
+            class="program-cta"
+            aria-label={`Learn more about ${prog.title}`}
+          >
+            Learn More
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </article>
+      ))}
+    </div>
+
+  </div><!-- /.container -->
+</section>
+
+<style>
+  /* ─── Section ─────────────────────────────────────────── */
+  .programs-section {
+    padding: var(--section-gap, 96px) 0;
+    background: var(--color-surface);
+    position: relative;
+  }
+
+  /* ─── Subtle dot pattern ──────────────────────────────── */
+  .programs-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  /* ─── Header ──────────────────────────────────────────── */
+  .section-header {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto clamp(40px, 5vw, 64px);
+  }
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    font-weight: 700;
+    border: 1px solid rgba(232, 180, 0, 0.35);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--font-headline, 'Barlow Condensed', sans-serif);
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    line-height: 1.05;
+    margin: 0 0 16px;
+  }
+  .section-body {
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+    line-height: 1.75;
+    color: var(--color-muted);
+    margin: 0;
+  }
+
+  /* ─── Grid ────────────────────────────────────────────── */
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+  }
+
+  /* ─── Card ────────────────────────────────────────────── */
+  .program-card {
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg, 16px);
+    padding: clamp(24px, 3vw, 36px);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+  }
+  /* Top accent bar */
+  .program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--color-brand);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .program-card:hover::before { transform: scaleX(1); }
+  .program-card:hover {
+    border-color: rgba(232, 180, 0, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  /* ─── Icon Box ────────────────────────────────────────── */
+  .icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: rgba(232, 180, 0, 0.08);
+    border: 1px solid rgba(232, 180, 0, 0.2);
+    color: var(--color-brand);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .program-card:hover .icon-box {
+    background: var(--color-brand);
+    color: #0D0D0D;
+    border-color: var(--color-brand);
+  }
+
+  /* ─── Title ───────────────────────────────────────────── */
+  .program-title {
+    font-family: var(--font-headline, 'Barlow Condensed', sans-serif);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    margin: 0;
+    line-height: 1.1;
+    transition: color 0.2s ease;
+  }
+  .program-card:hover .program-title { color: var(--color-brand); }
+
+  /* ─── Description ─────────────────────────────────────── */
+  .program-desc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--color-muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  /* ─── Benefits ────────────────────────────────────────── */
+  .program-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+  }
+  .program-benefit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    color: var(--color-muted);
+    font-weight: 500;
+    line-height: 1;
+  }
+  .benefit-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-brand);
+    flex-shrink: 0;
+  }
+
+  /* ─── CTA ─────────────────────────────────────────────── */
+  .program-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono, 'Space Mono', monospace);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    font-weight: 700;
+    padding: 10px 0 0;
+    transition: gap 0.2s ease;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: auto;
+  }
+  .program-cta:hover { gap: 12px; }
+
+  /* ─── Responsive ──────────────────────────────────────── */
+  @media (max-width: 1023px) {
+    .programs-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 599px) {
+    .programs-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ─── Fade-in + stagger ───────────────────────────────── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.55s ease var(--delay, 0ms),
+      transform 0.55s ease var(--delay, 0ms);
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  // Intersection Observer — reveal cards with staggered delay
+  const revealEls = document.querySelectorAll('#programs .fade-in');
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  revealEls.forEach((el) => revealObserver.observe(el));
+</script>

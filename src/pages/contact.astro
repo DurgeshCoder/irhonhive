@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Contact from '../components/sections/Contact.astro';
+
+const breadcrumbs = [
+  { name: 'Contact', url: 'https://ironhive.fitness/contact/' }
+];
+---
+
+<BaseLayout
+  title="Contact Ironhive Fitness Gym Lucknow | Book Free Trial | Gomti Nagar"
+  description="Get in touch with Ironhive Fitness Gym at Gomti Nagar, Lucknow. Call +91-8127171111, visit us at 1/21 Vastu Khand near SPNA Sweets, or book a free trial via WhatsApp."
+  canonical="https://ironhive.fitness/contact/"
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Page Hero -->
+  <section class="contact-page-hero">
+    <div class="container">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Contact Us</span>
+      </nav>
+      <div class="contact-page-hero-inner reveal">
+        <span class="label-text text-brand">Get In Touch</span>
+        <h1 class="headline-lg">Contact Ironhive<br /><span class="text-brand">Fitness Gym</span></h1>
+        <p class="body-lg">
+          Visit us at <strong>1/21, Vastu Khand, Gomti Nagar, Lucknow</strong>.
+          We are open 7 days a week — Morning 5:30 AM to 11:30 AM & Evening 4:00 PM to 10:00 PM.
+        </p>
+        <div class="contact-hero-badges">
+          <a href="tel:+918127171111" class="contact-hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15.92z"/></svg>
+            +91-8127171111
+          </a>
+          <a href="mailto:ironhivefitnessgym@gmail.com" class="contact-hero-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            ironhivefitnessgym@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Contact />
+</BaseLayout>
+
+<style>
+  .contact-page-hero {
+    padding: clamp(120px, 15vw, 160px) 0 clamp(48px, 6vw, 80px);
+    background: var(--color-bg);
+    text-align: center;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 28px;
+  }
+
+  .breadcrumb a {
+    color: var(--color-brand);
+    text-decoration: none;
+  }
+
+  .contact-page-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .contact-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+  .contact-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: var(--radius-full);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .contact-hero-badge:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+    background: var(--color-brand-subtle);
+  }
+
+  @media (max-width: 599px) {
+    .contact-hero-badges { flex-direction: column; align-items: center; }
+  }
+</style>

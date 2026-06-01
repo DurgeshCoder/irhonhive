@@ -1,0 +1,285 @@
+---
+interface BlogPost {
+  id: string;
+  title: string;
+  category: string;
+  excerpt: string;
+  date: string;
+  author: string;
+  image: string;
+}
+
+const posts: BlogPost[] = [
+  {
+    id: 'how-to-get-fit',
+    title: "How to Get Fit: A Beginner's Guide to Starting Your Journey at Ironhive",
+    category: 'Training',
+    excerpt:
+      "Starting your fitness journey can be overwhelming. Here's a step-by-step guide to getting fit in Gomti Nagar.",
+    date: 'March 27, 2026',
+    author: 'Ironhive Team',
+    image:
+      'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800&auto=format&fit=crop',
+  },
+  {
+    id: 'how-to-maintain-yourself',
+    title: 'Beyond the Transformation: How to Maintain Your Fitness Results Long-Term',
+    category: 'Lifestyle',
+    excerpt:
+      'Winning the battle is one thing; winning the war is another. Learn the secrets to sustainable fitness maintenance.',
+    date: 'March 25, 2026',
+    author: 'Coach Aryan',
+    image:
+      'https://images.unsplash.com/photo-1518310383802-640c2de311b2?q=80&w=800&auto=format&fit=crop',
+  },
+  {
+    id: 'best-gym-gomti-nagar',
+    title: 'Why Ironhive is the Best Gym in Gomti Nagar Lucknow for Your Goals',
+    category: 'Community',
+    excerpt:
+      'Explore the facilities, trainers, and culture that make us the top-rated fitness center in Lucknow.',
+    date: 'March 20, 2026',
+    author: 'Ironhive Admin',
+    image:
+      'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800&auto=format&fit=crop',
+  },
+];
+---
+
+<section class="blog-preview-section section" id="blog" aria-labelledby="blog-preview-heading">
+  <div class="container">
+
+    <!-- Section header -->
+    <div class="section-header" style="text-align:center; margin-bottom: clamp(40px, 5vw, 64px);">
+      <span class="section-label">The Knowledge Base</span>
+      <h2 class="section-title" id="blog-preview-heading">
+        Latest <span class="text-brand">Articles</span>
+      </h2>
+      <p class="section-desc">
+        Expert advice on training, nutrition, and lifestyle to help you conquer your goals.
+      </p>
+    </div>
+
+    <!-- Blog grid -->
+    <div class="blog-preview-grid">
+      {posts.map((post) => (
+        <a href={`/blog/${post.id}/`} class="blog-card">
+
+          <!-- Card image -->
+          <div class="blog-card-img">
+            <img
+              src={post.image}
+              alt={post.title}
+              loading="lazy"
+              decoding="async"
+              width="800"
+              height="450"
+            />
+            <!-- Category badge -->
+            <div style="position:absolute;top:16px;left:16px;">
+              <span
+                class="badge"
+                style="background:var(--color-brand);color:#0D0D0D;border-color:var(--color-brand);"
+              >
+                {post.category}
+              </span>
+            </div>
+          </div>
+
+          <!-- Card body -->
+          <div class="blog-card-body">
+            <!-- Meta row -->
+            <div class="blog-meta">
+              <span class="blog-date">{post.date}</span>
+              <span class="blog-dot">&bull;</span>
+              <span class="blog-author">{post.author}</span>
+            </div>
+
+            <!-- Title -->
+            <h3 class="blog-title">{post.title}</h3>
+
+            <!-- Excerpt -->
+            <p class="blog-excerpt">{post.excerpt}</p>
+
+            <!-- CTA -->
+            <div class="blog-read-more">Read Full Article &rarr;</div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="blog-preview-cta">
+      <a href="/blog/" class="btn-outline" aria-label="View all blog articles">
+        View All Articles →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ── Section ──────────────────────────────────────────────── */
+  .blog-preview-section {
+    padding: var(--section-gap) 0;
+    background: var(--color-surface);
+  }
+
+  /* ── Grid ─────────────────────────────────────────────────── */
+  .blog-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2.5vw, 28px);
+    margin-bottom: clamp(40px, 5vw, 60px);
+  }
+
+  /* ── Card ─────────────────────────────────────────────────── */
+  .blog-card {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg, 16px);
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .blog-card:hover {
+    border-color: var(--color-brand);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(232, 180, 0, 0.12);
+  }
+
+  /* ── Card image ───────────────────────────────────────────── */
+  .blog-card-img {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .blog-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+  }
+
+  .blog-card:hover .blog-card-img img {
+    transform: scale(1.06);
+  }
+
+  /* ── Card body ────────────────────────────────────────────── */
+  .blog-card-body {
+    padding: clamp(20px, 3vw, 28px);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  /* ── Badge ────────────────────────────────────────────────── */
+  .badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    white-space: nowrap;
+  }
+
+  /* ── Meta row ─────────────────────────────────────────────── */
+  .blog-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    font-weight: 700;
+    flex-wrap: wrap;
+  }
+
+  .blog-dot {
+    color: var(--color-brand);
+    font-size: 0.8rem;
+  }
+
+  /* ── Title ────────────────────────────────────────────────── */
+  .blog-title {
+    font-family: var(--font-headline);
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    line-height: 1.15;
+    transition: color 0.2s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .blog-card:hover .blog-title {
+    color: var(--color-brand);
+  }
+
+  /* ── Excerpt ──────────────────────────────────────────────── */
+  .blog-excerpt {
+    font-size: 0.88rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+    margin: 0;
+  }
+
+  /* ── Read more ────────────────────────────────────────────── */
+  .blog-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    font-weight: 700;
+    transition: gap 0.2s ease;
+    margin-top: 4px;
+  }
+
+  .blog-card:hover .blog-read-more {
+    gap: 10px;
+  }
+
+  /* ── Bottom CTA ───────────────────────────────────────────── */
+  .blog-preview-cta {
+    text-align: center;
+  }
+
+  /* ── Responsive ───────────────────────────────────────────── */
+  @media (max-width: 1023px) {
+    .blog-preview-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 599px) {
+    .blog-preview-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

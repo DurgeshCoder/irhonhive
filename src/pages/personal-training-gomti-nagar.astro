@@ -1,0 +1,128 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Personal Training in Gomti Nagar Lucknow | Certified Trainers | Ironhive"
+  description="Get certified personal training in Gomti Nagar, Lucknow at Ironhive Fitness. Our expert trainers Sunil Kumar & Punit Awasthi create customized fitness plans for weight loss, muscle gain & performance."
+  canonical="https://ironhive.fitness/personal-training-gomti-nagar/"
+  breadcrumbs={[{ name: 'Personal Training Gomti Nagar', url: 'https://ironhive.fitness/personal-training-gomti-nagar/' }]}
+>
+  <!-- Hero -->
+  <section class="local-hero">
+    <div class="container local-hero-container">
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="/">Home</a>
+        <span aria-hidden="true">&rsaquo;</span>
+        <span aria-current="page">Personal Training</span>
+      </nav>
+      <div class="local-hero-content reveal">
+        <h1 class="headline-lg">Personal Training in<br/>Gomti Nagar Lucknow</h1>
+        <h2 class="headline-sm text-brand mt-4">Transform With Expert Guidance</h2>
+        <div class="local-hero-body">
+          <p>Achieving your fitness goals is faster and safer when you have an expert by your side. At Ironhive Fitness, we offer elite personal training in Gomti Nagar, Lucknow, tailored to your unique body type, lifestyle, and objectives.</p>
+          <p>Whether you are looking to lose body fat, gain muscle mass, prepare for a competition, or simply lead a healthier lifestyle, our certified coaches have the experience to get you there. Our personal trainers near you in Lucknow don't just count reps—they educate, motivate, and hold you accountable.</p>
+          <p>We believe in a holistic approach that includes customized workout routines, form correction, nutritional guidance, and ongoing progress tracking. Join the top-rated fitness center in Lucknow and experience the difference that dedicated 1-on-1 coaching can make.</p>
+        </div>
+        <div class="local-hero-cta">
+          <a href="https://wa.me/918127171111?text=Hi%20Ironhive,%20I'm%20interested%20in%20Personal%20Training!" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Book a Free Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trainers -->
+  <section class="trainers-section section-surface">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="label-text">Your Coaches</span>
+        <h2 class="headline-md">Meet the Experts</h2>
+      </div>
+      <div class="grid-2" style="max-width: 900px; margin: 0 auto;">
+        <div class="card overflow-hidden reveal">
+          <img src="/images/trainer/sunil_kumar.jpg" alt="Sunil Kumar - Head Coach" style="width:100%; aspect-ratio:3/4; object-fit:cover;" />
+          <div class="p-6">
+            <h3 class="headline-sm">Sunil Kumar</h3>
+            <p class="label-text text-brand mb-4">Head Coach / Bodybuilding</p>
+            <p class="body-base">Specializes in advanced weight training, muscle hypertrophy, and competition prep.</p>
+          </div>
+        </div>
+        <div class="card overflow-hidden reveal reveal-delay-1">
+          <img src="/images/trainer/punit_awasti.jpg" alt="Punit Awasthi - Senior Trainer" style="width:100%; aspect-ratio:3/4; object-fit:cover;" />
+          <div class="p-6">
+            <h3 class="headline-sm">Punit Awasthi</h3>
+            <p class="label-text text-brand mb-4">Senior Trainer / Fitness</p>
+            <p class="body-base">Expert in functional training, fat loss circuits, and overall conditioning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="headline-md">What's Included</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card p-6 reveal">
+          <h3 class="headline-sm mb-2">Custom Plans</h3>
+          <p class="body-base">Workouts designed specifically for your body and goals.</p>
+        </div>
+        <div class="card p-6 reveal reveal-delay-1">
+          <h3 class="headline-sm mb-2">Form Correction</h3>
+          <p class="body-base">Prevent injuries with expert supervision on every lift.</p>
+        </div>
+        <div class="card p-6 reveal reveal-delay-2">
+          <h3 class="headline-sm mb-2">Diet & Nutrition</h3>
+          <p class="body-base">Personalized meal plans to fuel your transformation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .local-hero {
+    padding: clamp(120px, 15vw, 160px) 0 clamp(48px, 6vw, 80px);
+    background: var(--color-bg);
+  }
+  .local-hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    margin-bottom: 28px;
+  }
+  .breadcrumb a {
+    color: var(--color-brand);
+  }
+  .local-hero-content {
+    max-width: 800px;
+  }
+  .local-hero-body {
+    margin: 24px 0 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+  }
+  .p-6 { padding: 24px; }
+  .mb-2 { margin-bottom: 8px; }
+  .mb-4 { margin-bottom: 16px; }
+  .mt-4 { margin-top: 16px; }
+</style>

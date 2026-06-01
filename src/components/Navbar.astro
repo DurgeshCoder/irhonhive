@@ -1,0 +1,525 @@
+---
+// Navbar.astro — Ironhive Fitness Gym
+const navLinks = [
+  { label: "About",      href: "#about" },
+  { label: "Gallery",    href: "#gallery" },
+  { label: "Programs",   href: "#programs" },
+  { label: "Membership", href: "#membership" },
+  { label: "Trainers",   href: "#trainers" },
+  { label: "Community",  href: "#community" },
+  { label: "Blog",       href: "/blog/" },
+  { label: "Contact",    href: "#contact" },
+];
+
+const whatsappUrl =
+  "https://wa.me/918127171111?text=Hi%20Ironhive%2C%20I%27d%20like%20to%20book%20a%20free%20trial.";
+---
+
+<header id="main-nav">
+  <div class="container">
+    <div class="flex-between">
+      <!-- ── Logo ── -->
+      <a href="/" class="nav-logo" aria-label="Ironhive Fitness — Home">
+        <img
+          src="/images/ironhive_logo.png"
+          alt="Ironhive Fitness Logo"
+          class="nav-logo-img"
+          width="38"
+          height="38"
+          loading="eager"
+          decoding="async"
+        />
+        <span class="nav-logo-name">
+          Iron<span>hive</span>&nbsp;Fitness&nbsp;Gym
+        </span>
+      </a>
+
+      <!-- ── Desktop Nav ── -->
+      <nav class="nav-desktop" aria-label="Primary navigation">
+        <ul class="nav-links" role="list">
+          {navLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <a
+          href={whatsappUrl}
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Book a free trial via WhatsApp"
+        >
+          Book Free Trial
+        </a>
+      </nav>
+
+      <!-- ── Hamburger (mobile only) ── -->
+      <button
+        id="nav-hamburger"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-controls="nav-drawer"
+        aria-expanded="false"
+      >
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+          <rect y="3"  width="22" height="2.2" rx="1.1" fill="currentColor"/>
+          <rect y="10" width="22" height="2.2" rx="1.1" fill="currentColor"/>
+          <rect y="17" width="22" height="2.2" rx="1.1" fill="currentColor"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ── Mobile Drawer ── -->
+<div id="nav-drawer" class="nav-drawer" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+  <div class="nav-panel" role="document">
+    <!-- Panel Header -->
+    <header class="nav-panel-header">
+      <a href="/" class="nav-logo" aria-label="Ironhive Fitness — Home">
+        <img
+          src="/images/ironhive_logo.png"
+          alt="Ironhive Fitness Logo"
+          class="nav-logo-img"
+          width="38"
+          height="38"
+          loading="lazy"
+          decoding="async"
+        />
+        <span class="nav-logo-name">
+          Iron<span>hive</span>
+        </span>
+      </a>
+      <button class="theme-toggle" aria-label="Toggle theme" style="margin-left: auto; margin-right: 16px;">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button
+        id="nav-close"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M1 1l14 14M15 1L1 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Panel Links -->
+    <nav class="nav-panel-links" aria-label="Mobile navigation">
+      {navLinks.map((link) => (
+        <a href={link.href} class="nav-panel-link">{link.label}</a>
+      ))}
+    </nav>
+
+    <!-- Panel Footer -->
+    <footer class="nav-panel-footer">
+      <a
+        href={whatsappUrl}
+        class="btn btn-primary w-full"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Join The Hive via WhatsApp"
+      >
+        Join The Hive
+      </a>
+
+      <div class="hours-badge" aria-label="Operating hours">
+        <div class="hours-row">
+          <span class="hours-label">Morning</span>
+          <span class="hours-time">5:30 AM – 11:30 AM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-label">Evening</span>
+          <span class="hours-time">4:00 PM – 10:00 PM</span>
+        </div>
+        <div class="hours-row">
+          <span class="hours-label">Days</span>
+          <span class="hours-time">Open 7 Days / Week</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+<!-- ─────────────────────────────────────────────── -->
+<style>
+  /* ── Logo ──────────────────────────────────────── */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: transparent;
+    color: #F0F0F0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  #main-nav.scrolled .theme-toggle {
+    color: var(--color-text);
+  }
+  .theme-toggle:hover {
+    color: var(--color-brand);
+    background: var(--color-surface);
+  }
+  .theme-toggle .moon-icon { display: none; }
+  .theme-toggle .sun-icon { display: block; }
+  
+  :global([data-theme="light"]) .theme-toggle .sun-icon { display: none; }
+  :global([data-theme="light"]) .theme-toggle .moon-icon { display: block; }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--color-brand);
+    flex-shrink: 0;
+  }
+  .nav-logo-name {
+    font-family: var(--font-headline);
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: #F0F0F0;
+    line-height: 1;
+    transition: color 0.35s ease;
+  }
+  #main-nav.scrolled .nav-logo-name {
+    color: var(--color-text);
+  }
+  .nav-logo-name span {
+    color: var(--color-brand);
+  }
+
+  /* ── Header ─────────────────────────────────────── */
+  #main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 18px 0;
+    transition: all 0.35s ease;
+  }
+  #main-nav.scrolled {
+    background: rgba(13, 13, 13, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 12px 0;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  }
+  :global([data-theme="light"]) #main-nav.scrolled {
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  }
+
+  /* ── Desktop Nav ─────────────────────────────────── */
+  .nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    position: relative;
+    padding: 4px 2px;
+  }
+  #main-nav.scrolled .nav-links a {
+    color: var(--color-muted);
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-brand);
+    transition: width 0.25s ease;
+  }
+  .nav-links a:hover {
+    color: var(--color-brand);
+  }
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+
+  /* ── Hamburger ───────────────────────────────────── */
+  #nav-hamburger {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  #nav-hamburger:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand);
+  }
+
+  /* ── Mobile Drawer Shell ─────────────────────────── */
+  .nav-drawer {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    pointer-events: none;
+  }
+  .nav-drawer.open {
+    pointer-events: auto;
+  }
+
+  /* Backdrop */
+  .nav-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.35s ease;
+    cursor: pointer;
+  }
+  .nav-drawer.open .nav-backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  :global([data-theme="light"]) .nav-drawer.open .nav-backdrop {
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  /* Panel slide-in */
+  .nav-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(340px, 88vw);
+    background: var(--color-surface);
+    border-left: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .nav-drawer.open .nav-panel {
+    transform: translateX(0);
+  }
+
+  /* Panel sections */
+  .nav-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+  }
+  .nav-panel-links {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+  .nav-panel-links a {
+    display: block;
+    padding: 12px 16px;
+    font-family: var(--font-headline);
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+  .nav-panel-links a:hover {
+    background: var(--color-surface-2);
+    color: var(--color-brand);
+    padding-left: 20px;
+  }
+  .nav-panel-footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  /* Hours badge */
+  .hours-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 12px 16px;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+  }
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .hours-label {
+    color: var(--color-brand);
+    font-weight: 700;
+  }
+  .hours-time {
+    color: var(--color-muted);
+  }
+
+  /* Close button */
+  #nav-close {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+  }
+  #nav-close:hover {
+    background: var(--color-brand);
+    color: #0d0d0d;
+    border-color: var(--color-brand);
+  }
+
+  /* Utility */
+  .w-full {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* ── Responsive ──────────────────────────────────── */
+  @media (max-width: 1349px) {
+    .nav-desktop {
+      display: none;
+    }
+    #nav-hamburger {
+      display: flex;
+    }
+  }
+</style>
+
+<!-- ─────────────────────────────────────────────── -->
+<script>
+  (function () {
+    const header    = document.getElementById("main-nav");
+    const hamburger = document.getElementById("nav-hamburger");
+    const drawer    = document.getElementById("nav-drawer");
+    const backdrop  = document.getElementById("nav-backdrop");
+    const closeBtn  = document.getElementById("nav-close");
+
+    /* ── Scroll detection ────────────────────────── */
+    function onScroll() {
+      if (!header) return;
+      if (window.scrollY > 60) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // run once on load
+
+    /* ── Drawer helpers ──────────────────────────── */
+    function openDrawer() {
+      if (!drawer || !hamburger) return;
+      drawer.classList.add("open");
+      drawer.setAttribute("aria-hidden", "false");
+      hamburger.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      if (!drawer || !hamburger) return;
+      drawer.classList.remove("open");
+      drawer.setAttribute("aria-hidden", "true");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
+    /* ── Theme Toggle ────────────────────────────── */
+    const themeToggles = document.querySelectorAll(".theme-toggle");
+    themeToggles.forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        if (currentTheme === "light") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.setItem("theme", "dark");
+        } else {
+          document.documentElement.setAttribute("data-theme", "light");
+          localStorage.setItem("theme", "light");
+        }
+      });
+    });
+
+    /* ── Event listeners ─────────────────────────── */
+    hamburger && hamburger.addEventListener("click", openDrawer);
+    closeBtn  && closeBtn.addEventListener("click", closeDrawer);
+    backdrop  && backdrop.addEventListener("click", closeDrawer);
+
+    // Close drawer when any panel link is clicked
+    const panelLinks = document.querySelectorAll(".nav-panel-links a");
+    panelLinks.forEach(function (link) {
+      link.addEventListener("click", closeDrawer);
+    });
+
+    // ESC key closes drawer
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeDrawer();
+    });
+  })();
+</script>

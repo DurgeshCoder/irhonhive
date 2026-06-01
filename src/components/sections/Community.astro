@@ -1,0 +1,345 @@
+---
+// Community.astro — Ironhive Fitness Gym
+// Full-width "The Hive Culture" CTA section
+
+const features = [
+  {
+    id: 'tribe-events',
+    title: 'Tribe Events',
+    desc: 'Monthly challenges, friendly competitions, and social gatherings that make fitness fun.',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  },
+  {
+    id: 'support-system',
+    title: 'Support System',
+    desc: "Accountability partners, community mentorship, and a team that lifts you when it's hard.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+  },
+];
+---
+
+<section class="community-section" id="community" aria-label="Community — The Hive Culture">
+  <!-- Background layers -->
+  <div class="community-bg" aria-hidden="true"></div>
+  <div class="community-orb" aria-hidden="true"></div>
+
+  <!-- Decorative noise texture overlay -->
+  <div class="community-noise" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="community-content fade-in">
+      <!-- Label -->
+      <span class="community-label">The Hive Culture</span>
+
+      <!-- Headline -->
+      <h2 class="community-h2">
+        You Don't Just Join.<br />
+        <span class="accent">You Belong.</span>
+      </h2>
+
+      <!-- Body copy -->
+      <p class="community-body">
+        Ironhive Fitness Gym isn't just about lifting weights; it's about lifting
+        each other. We are a collective of driven individuals united by the pursuit
+        of strength. When you step through our doors, you leave your ego behind
+        and become part of the tribe.
+      </p>
+
+      <!-- 2-col mini feature grid -->
+      <div class="community-features" role="list" aria-label="Community features">
+        {
+          features.map((feat) => (
+            <div class="community-feat" role="listitem" id={`community-feat-${feat.id}`}>
+              <div class="community-feat-icon" aria-hidden="true" set:html={feat.icon} />
+              <div>
+                <div class="community-feat-title">{feat.title}</div>
+                <p class="community-feat-desc">{feat.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- CTA -->
+      <div class="community-cta">
+        <a
+          href="https://wa.me/918127171111?text=Hi%20Ironhive,%20I%27d%20like%20to%20join%20the%20community!"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary community-btn"
+          aria-label="Join the Ironhive community on WhatsApp"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <!-- WhatsApp icon -->
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"
+            ></path>
+          </svg>
+          Join The Community
+        </a>
+
+        <!-- Secondary link -->
+        <a
+          href="#membership"
+          class="community-secondary-link"
+          aria-label="View membership plans"
+        >
+          View Plans
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ── Layout ─────────────────────────────────── */
+  .community-section {
+    padding: var(--section-gap) 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg);
+  }
+
+  /* ── Background layers ────────────────────────── */
+  .community-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        to right,
+        rgba(13, 13, 13, 1) 0%,
+        rgba(13, 13, 13, 0.85) 60%,
+        rgba(13, 13, 13, 0.4) 100%
+      ),
+      linear-gradient(135deg, rgba(232, 180, 0, 0.03) 0%, transparent 60%);
+    z-index: 1;
+  }
+
+  /* Ambient brand glow orb */
+  .community-orb {
+    position: absolute;
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+      circle,
+      rgba(232, 180, 0, 0.08) 0%,
+      transparent 70%
+    );
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  /* Subtle noise texture */
+  .community-noise {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    z-index: 1;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* ── Content ──────────────────────────────────── */
+  .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .community-content {
+    max-width: 680px;
+  }
+
+  /* Label */
+  .community-label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-brand);
+    background: rgba(232, 180, 0, 0.08);
+    border: 1px solid rgba(232, 180, 0, 0.2);
+    border-radius: 100px;
+    padding: 6px 16px;
+    margin-bottom: 28px;
+  }
+
+  /* Headline */
+  .community-h2 {
+    font-family: var(--font-headline);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+    margin-bottom: 24px;
+    color: var(--color-text);
+  }
+
+  .community-h2 .accent {
+    color: var(--color-brand);
+  }
+
+  /* Body */
+  .community-body {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.8;
+    color: var(--color-muted);
+    margin-bottom: 36px;
+  }
+
+  /* ── Feature mini-grid ────────────────────────── */
+  .community-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding: 28px;
+    background: rgba(22, 22, 22, 0.5);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+  }
+
+  .community-feat {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .community-feat-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(232, 180, 0, 0.1);
+    border: 1px solid rgba(232, 180, 0, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-brand);
+    margin-top: 2px;
+  }
+
+  .community-feat-title {
+    font-family: var(--font-headline);
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    margin-bottom: 6px;
+  }
+
+  .community-feat-desc {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── CTA row ──────────────────────────────────── */
+  .community-cta {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .community-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-family: var(--font-headline);
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: var(--color-brand);
+    color: #0d0d0d;
+    border: none;
+    box-shadow: 0 4px 24px rgba(232, 180, 0, 0.3);
+    transition: all 0.2s ease;
+  }
+
+  .community-btn:hover {
+    background: var(--color-brand-dark);
+    box-shadow: 0 8px 36px rgba(232, 180, 0, 0.45);
+    transform: translateY(-2px);
+  }
+
+  .community-secondary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-headline);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-muted);
+    transition: color 0.2s ease;
+  }
+
+  .community-secondary-link:hover {
+    color: var(--color-brand);
+  }
+
+  /* ── Responsive ───────────────────────────────── */
+  @media (max-width: 767px) {
+    .community-features {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .community-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .community-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .community-h2 {
+      line-height: 1;
+    }
+  }
+</style>
